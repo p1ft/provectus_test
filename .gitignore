@@ -1,0 +1,15 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+
+# Common local build and editor output
+.venv/
+node_modules/
+__pycache__/
+.pytest_cache/
+.idea/
+.vscode/
