@@ -1,0 +1,4 @@
+# Preserve original fixtures and byte-hashed captures/snapshots on every checkout.
+tasks/evidence/** -text whitespace=cr-at-eol
+examples/real-replay/** -text whitespace=cr-at-eol
+ai-workflow/snapshots/** -text whitespace=cr-at-eol

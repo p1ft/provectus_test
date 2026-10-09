@@ -1,0 +1,83 @@
+{
+  "status": "redacted",
+  "original_scope": "${CODEX_HOME}/config.toml plus installed plugin descriptors",
+  "plugins": [
+    {
+      "name": "codex-app-tools",
+      "version": "0.1.5",
+      "purpose": "Codex chat/file/runtime tools"
+    },
+    {
+      "name": "unified-computer-use",
+      "version": "26.1002.52244",
+      "purpose": "Local browser/native automation runtime and guidance"
+    },
+    {
+      "name": "browser",
+      "version": "26.1002.52244",
+      "purpose": "Local browser/native automation runtime and guidance"
+    },
+    {
+      "name": "computer-use",
+      "version": "26.1002.52244",
+      "purpose": "Local browser/native automation runtime and guidance"
+    }
+  ],
+  "observed_tool_groups": [
+    "Codex app chat/project tools",
+    "cua_repl browser automation",
+    "shell, patch and local image inspection",
+    "web lookup for official documentation",
+    "runtime collaboration subagents"
+  ],
+  "node_repl": {
+    "command": "[APP_PROVISIONED_NODE_REPL_EXECUTABLE]",
+    "args": [],
+    "startup_timeout_sec": 120,
+    "env_vars": [
+      "CODEX_WINDOWS_REGISTERED_CORE"
+    ],
+    "environment": {
+      "NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS": "1000",
+      "NODE_REPL_NODE_MODULE_DIRS": "[HOST_RUNTIME_VALUE_OMITTED]",
+      "NODE_REPL_NODE_PATH": "[HOST_RUNTIME_VALUE_OMITTED]",
+      "NODE_REPL_TRUSTED_CODE_PATHS": "${CODEX_HOME};${USER_HOME}\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\3dd31cfff853001c\\bin\\node_modules",
+      "CODEX_HOME": "${CODEX_HOME}",
+      "BROWSER_USE_AVAILABLE_BACKENDS": "chrome,iab,mcpapps",
+      "BROWSER_USE_TINYSKY_ENABLED": "1",
+      "NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER": "",
+      "NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME": "",
+      "BROWSER_USE_CODEX_APP_BUILD_FLAVOR": "prod",
+      "BROWSER_USE_CODEX_APP_VERSION": "26.1002.52244",
+      "NODE_REPL_TRUSTED_SERVICES": "{\"browser\":\"${CODEX_HOME}/plugins/cache/openai-bundled/browser/26.1002.52244/scripts/browser-service.mjs\",\"sky\":\"@oai/sky/service\"}",
+      "SKY_CUA_NATIVE_PIPE": "1",
+      "SKY_CUA_NATIVE_PIPE_DIRECTORY": "[HOST_RUNTIME_VALUE_OMITTED]",
+      "CODEX_CLI_PATH": "[HOST_RUNTIME_VALUE_OMITTED]",
+      "NODE_REPL_UNTRUSTED_ENV_ALLOWLIST": "CODEX_WINDOWS_REGISTERED_CORE"
+    }
+  },
+  "shell_environment_policy": {
+    "set": {
+      "NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S": "[HOST_BUILD_HASH_OMITTED]"
+    }
+  },
+  "notification_integration": {
+    "status": "used",
+    "scope": "Configured host notify command",
+    "command": "[BUNDLED_CODEX_COMPUTER_USE_HELPER]",
+    "args": [
+      "turn-ended"
+    ],
+    "purpose": "App-managed turn-end notification/automation integration, not a custom project hook; invocation history not exported",
+    "usage": "Recorded host setting during the exercise; dispatch history is not-exportable"
+  },
+  "custom_project_mcp_servers": "not-used",
+  "custom_project_hooks": "not-used",
+  "other_installed_plugins": "Omitted: presence in personal config is not evidence of exercise usage",
+  "redactions": [
+    "Host executable/node paths and named-pipe instance omitted",
+    "Browser client trust hash omitted as build-specific",
+    "Only exercise-related plugin/runtime sections retained; unrelated plugins/projects/hook trust state excluded"
+  ],
+  "restore": "Have Codex provision its normal plugin/browser runtime. These host-specific JSON snapshots are documentation, not executable MCP setup. No custom server, hook or account connection is required for application replay."
+}

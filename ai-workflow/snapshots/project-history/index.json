@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "scope": "Recoverable historical project instruction versions, not a complete chat export.",
+  "initial_git_commit": "77957afab3e75630946872795d89a4f7ec864504",
+  "records": [
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-01.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "git-file",
+        "commit": "77957afab3e75630946872795d89a4f7ec864504",
+        "path": "AGENTS.md"
+      },
+      "also_observed": [
+        {
+          "kind": "local-project-session",
+          "thread_id": "01a11b52-22c9-7952-a453-0e1cd5e185ae",
+          "line": 7,
+          "timestamp_utc": "2026-10-08T11:42:13.920Z"
+        }
+      ],
+      "normalized_sha256": "0cdf81873bf9a809db39af16a3c130e4367a23882da490a15ed8e1fcbde7dd22",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/evidence-review-01.md",
+      "original_path": "${REPO_ROOT}/.agents/skills/evidence-review/SKILL.md",
+      "kind": "evidence-review",
+      "status": "historical",
+      "source": {
+        "kind": "git-file",
+        "commit": "77957afab3e75630946872795d89a4f7ec864504",
+        "path": ".agents/skills/evidence-review/SKILL.md"
+      },
+      "also_observed": [],
+      "normalized_sha256": "f1000804d320194658369f0aad32ecab73280d068a1efb2da01e3530ee78e9e7",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/feature-review-01.md",
+      "original_path": "${REPO_ROOT}/.agents/skills/feature-review/SKILL.md",
+      "kind": "feature-review",
+      "status": "historical",
+      "source": {
+        "kind": "git-file",
+        "commit": "77957afab3e75630946872795d89a4f7ec864504",
+        "path": ".agents/skills/feature-review/SKILL.md"
+      },
+      "also_observed": [],
+      "normalized_sha256": "028347c5d8b9545b5cfb57bdc30173d3b0d301b7c93bb294218b86649d281a07",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/feature-design-01.md",
+      "original_path": "${REPO_ROOT}/.agents/skills/feature-design/SKILL.md",
+      "kind": "feature-design",
+      "status": "removed-before-implementation",
+      "source": {
+        "kind": "exact-add-file-patch",
+        "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+        "line": 168,
+        "timestamp_utc": "2026-10-07T17:17:08.633Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "65bb6f3c19eb0390fc9fafdcf2fb3425dd11b25a5a04f525f66b128efddc8415",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "not-used; removed during setup before implementation"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/feature-implementation-01.md",
+      "original_path": "${REPO_ROOT}/.agents/skills/feature-implementation/SKILL.md",
+      "kind": "feature-implementation",
+      "status": "removed-before-implementation",
+      "source": {
+        "kind": "exact-add-file-patch",
+        "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+        "line": 168,
+        "timestamp_utc": "2026-10-07T17:17:08.633Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "d4fc648ab0858899b47736a3f5a3e74d7231a187a72ec10fce342a0fdd7b6b21",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "not-used; removed during setup before implementation"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/feature-review-02.md",
+      "original_path": "${REPO_ROOT}/.agents/skills/feature-review/SKILL.md",
+      "kind": "feature-review",
+      "status": "historical",
+      "source": {
+        "kind": "exact-add-file-patch",
+        "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+        "line": 168,
+        "timestamp_utc": "2026-10-07T17:17:08.633Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "10eb6c5b61eda135a1f28f322a621956c7ca53feae662d2bb013a3063f0f0bff",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-patch-01.patch",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS-patch",
+      "status": "historical",
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+        "line": 168,
+        "timestamp_utc": "2026-10-07T17:17:08.633Z"
+      },
+      "also_observed": [
+        {
+          "kind": "exact-patch",
+          "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+          "line": 180,
+          "timestamp_utc": "2026-10-07T17:17:56.005Z"
+        }
+      ],
+      "normalized_sha256": "78b45d491ec6a4d9a4bb513d2d543d3f3ffa4b2d7bd9ed5243f6e5002c1fbe9e",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-patch-02.patch",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS-patch",
+      "status": "historical",
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a116b7-36b2-7442-952c-49764e06ca5f",
+        "line": 213,
+        "timestamp_utc": "2026-10-07T17:19:25.273Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "70e4e7a75e284d6e5d7b1ab02560ecb082951b23f983a6e5af2e69fb8265c6c5",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-02.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11b52-22c9-7952-a453-0e1cd5e185ae",
+        "line": 279,
+        "timestamp_utc": "2026-10-08T14:28:35.172Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "d6556092dfb737312cbd1ea628d845b32192445bfdbd3bca10f9a7844222d745",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-03.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11b52-22c9-7952-a453-0e1cd5e185ae",
+        "line": 358,
+        "timestamp_utc": "2026-10-09T11:13:04.066Z"
+      },
+      "also_observed": [
+        {
+          "kind": "local-project-session",
+          "thread_id": "01a1205e-6a80-7d30-8046-d5add129f05a",
+          "line": 7,
+          "timestamp_utc": "2026-10-09T11:13:43.512Z"
+        },
+        {
+          "kind": "local-project-session",
+          "thread_id": "01a12079-f3a1-75d3-a9af-218cd7843b31",
+          "line": 7,
+          "timestamp_utc": "2026-10-09T11:43:48.294Z"
+        }
+      ],
+      "normalized_sha256": "2a3546d4cc6c5292f9b0263c32e505a1cba6557cee7f34b5eeb00a55924cd28d",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-04.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 7,
+        "timestamp_utc": "2026-10-08T12:08:40.059Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "5f44d103906415c313ec7a4d57bdd713abb195c62348395881dea620877d930d",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-patch-05.patch",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS-patch",
+      "status": "historical",
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 796,
+        "timestamp_utc": "2026-10-08T15:19:35.225Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "6e27902662c090ab6fda48e8c9da6e8058cbb00e0b85b7eb07149ccc8f192249",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-patch-06.patch",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS-patch",
+      "status": "historical",
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 1244,
+        "timestamp_utc": "2026-10-08T16:39:34.592Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "df658e945b507b49f319d0b4b047e4601548438d3b3eae722364c194b09e1db7",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-patch-07.patch",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS-patch",
+      "status": "historical",
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 1402,
+        "timestamp_utc": "2026-10-08T18:12:35.481Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "ca3e12fb40392526f0b687e91bdc9e17d26ef108c48467feb6cbf65601a3a7da",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-05.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11cfd-39cb-7152-8d53-10c123701609",
+        "line": 7,
+        "timestamp_utc": "2026-10-08T19:28:47.212Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "8c5fb79196e590c424b82e2d609b17f7a873c7f360a3460a7ce6e18a1418dca6",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/AGENTS-06.md",
+      "original_path": "${REPO_ROOT}/AGENTS.md",
+      "kind": "AGENTS",
+      "status": "historical",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 7,
+        "timestamp_utc": "2026-10-09T13:11:15.796Z"
+      },
+      "also_observed": [],
+      "normalized_sha256": "f12e62b116c4033b14894aab8b2f031926c82440e95d60608eb7947866a04adf",
+      "normalization": [
+        "CRLF to LF",
+        "Machine-specific workspace/user paths replaced with portable placeholders"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Historical configuration; see source event and current project files for applicability"
+    },
+    {
+      "snapshot_path": "ai-workflow/snapshots/project-history/README-before-submission.md",
+      "original_path": "${REPO_ROOT}/README.md",
+      "kind": "README",
+      "status": "historical",
+      "source": {
+        "kind": "working-copy-before-submission-rewrite",
+        "recorded_on": "2026-10-09"
+      },
+      "also_observed": [],
+      "normalized_sha256": "6a769df84449af7766477c6561cea523efd3094c94fb76e7c7baea2df7ed3972",
+      "normalization": [
+        "CRLF to LF",
+        "Workspace path replaced with portable placeholder"
+      ],
+      "availability": "exported",
+      "archive_only": true,
+      "implementation_usage": "Earlier implementation/configuration narrative; current reviewer README replaces it"
+    }
+  ],
+  "limitations": [
+    "AGENTS snapshots are full definitions observed in world_state; exact intervening AGENTS patches are preserved separately. The archive does not invent unobserved states or claim a complete timestamp for every edit.",
+    "feature-design and feature-implementation are exact original AddFile contents. They were removed during setup on 2026-10-07 before application implementation, and remain inactive.",
+    "Historical skill definitions available from the initial Git commit and exact AddFile patches are preserved. No additional skill revision history was found in the inspected project logs.",
+    "Session files contain encrypted inter-agent prompts; their plaintext is not exported here. See ../subagents.json for metadata and known plaintext exceptions.",
+    "Source session paths and unrelated account metadata are omitted. Timestamps are UTC; project-local timezone was Europe/Warsaw."
+  ],
+  "updates_covered_by_full_definitions": [
+    {
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b52-22c9-7952-a453-0e1cd5e185ae",
+        "line": 193,
+        "timestamp_utc": "2026-10-08T12:04:35.595Z"
+      },
+      "full_definition_path": "ai-workflow/snapshots/project-history/AGENTS-04.md",
+      "note": "Update is represented by a later exact full definition; redundant patch content omitted."
+    },
+    {
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 166,
+        "timestamp_utc": "2026-10-08T12:20:08.660Z"
+      },
+      "full_definition_path": "ai-workflow/snapshots/project-history/AGENTS-02.md",
+      "note": "Update is represented by a later exact full definition; redundant patch content omitted."
+    },
+    {
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a11b6a-5929-7670-b6c0-85a62f2457d6",
+        "line": 1632,
+        "timestamp_utc": "2026-10-08T19:09:44.720Z"
+      },
+      "full_definition_path": "ai-workflow/snapshots/project-history/AGENTS-05.md",
+      "note": "Update is represented by a later exact full definition; redundant patch content omitted."
+    },
+    {
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a12079-f3a1-75d3-a9af-218cd7843b31",
+        "line": 733,
+        "timestamp_utc": "2026-10-09T12:47:04.891Z"
+      },
+      "full_definition_path": "ai-workflow/snapshots/project-history/AGENTS-06.md",
+      "note": "Update is represented by a later exact full definition; redundant patch content omitted."
+    },
+    {
+      "source": {
+        "kind": "exact-patch",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 611,
+        "timestamp_utc": "2026-10-09T13:48:55.087Z"
+      },
+      "full_definition_path": "AGENTS.md",
+      "note": "Update is represented by a later exact full definition; redundant patch content omitted."
+    }
+  ]
+}

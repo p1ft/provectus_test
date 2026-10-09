@@ -1,0 +1,577 @@
+{
+  "template": false,
+  "categories": {
+    "development_tools_and_models": {
+      "status": "used",
+      "files": [
+        "ai-workflow/snapshots/development-model-history.json",
+        "ai-workflow/snapshots/user-settings.json",
+        "LLM_USAGE_NOTE.md",
+        "requirements-dev.txt"
+      ],
+      "notes": "Development models/runtime versions are observed per project chat; current host settings are distinct from historical settings. Coding-model temperature/output defaults were not exported."
+    },
+    "plugins_and_extensions": {
+      "status": "used",
+      "files": [
+        "ai-workflow/snapshots/tool-settings.json",
+        "ai-workflow/snapshots/builtin-guidance/index.json"
+      ],
+      "notes": "Codex app tools and browser/computer-use runtime/guidance were used. Other personally installed plugins are omitted; no custom project plugin or account integration was configured."
+    },
+    "application_models_and_parameters": {
+      "status": "used",
+      "files": [
+        "workspace/gemini.py",
+        "workspace/evidence.py",
+        "requirements.txt",
+        "ai-workflow/snapshots/application-history/index.json",
+        "examples/capture-provenance.json",
+        "workspace/schemas.py",
+        "workspace/prompts.py"
+      ],
+      "notes": "Current successful model is gemini-3.1-flash-lite. Exact earlier instructions/settings/schema snapshots include real attempts that failed; they are not certified successes or current defaults."
+    },
+    "skills": {
+      "status": "used",
+      "files": [
+        ".agents/skills/evidence-review/SKILL.md",
+        ".agents/skills/feature-review/SKILL.md",
+        "ai-workflow/snapshots/project-history/index.json",
+        "ai-workflow/snapshots/builtin-guidance/index.json"
+      ],
+      "notes": "Two active project skills. Removed setup experiment skills are archived and not-used for implementation. Installed built-in guidance snapshots are current reference copies; earlier exact built-in versions are not-exportable."
+    },
+    "agent_instructions_and_subagents": {
+      "status": "used",
+      "files": [
+        "AGENTS.md",
+        "IMPLEMENTATION_PLAN.md",
+        "ai-workflow/snapshots/project-history/index.json",
+        "ai-workflow/snapshots/subagents.json"
+      ],
+      "notes": "Normal root instructions and named historical versions. Six temporary collaboration tasks inherited gpt-6.1-sol/high; no standalone custom agent definition. Some exact encrypted historical prompts are not-exportable."
+    },
+    "hooks_and_scripts": {
+      "status": "used",
+      "files": [
+        "scripts/prepare_live_request.py",
+        "scripts/prepare_verification.py",
+        "scripts/replay_captured_draft.py",
+        "scripts/retry_checker.py",
+        "scripts/verification_results.py",
+        "scripts/verify_extension.py",
+        "scripts/verify_live.py",
+        "scripts/verify_q1_demo.py",
+        "scripts/verify_q2.py",
+        "scripts/verify_reference_cases.py",
+        "scripts/verify_remaining.py",
+        "ai-workflow/snapshots/tool-settings.json"
+      ],
+      "notes": "Scripts are manual commands, not hooks. Custom project hooks: not-used. Host bundled turn-ended notify integration is documented without its machine executable path; no hook is required for replay."
+    },
+    "prompts_and_rules": {
+      "status": "used",
+      "files": [
+        "workspace/gemini.py",
+        "workspace/evidence.py",
+        "tasks/evidence/domain.md",
+        "IMPLEMENTATION_PLAN.md",
+        "LLM_USAGE_NOTE.md",
+        "ai-workflow/snapshots/application-history/index.json",
+        "workspace/schemas.py",
+        "workspace/prompts.py"
+      ],
+      "notes": "Active application instructions are separate from source text. Captured earlier prompts/schema are named snapshots. Selected original user instructions are in the usage note; full chat logs are excluded."
+    },
+    "tool_and_mcp_settings": {
+      "status": "redacted",
+      "files": [
+        "ai-workflow/snapshots/tool-settings.json",
+        ".streamlit/config.toml"
+      ],
+      "notes": "Applicable host node_repl/browser configuration only. Executable paths, pipe instances and trust hashes omitted with reasons. Custom project MCP server: not-used; application replay has no MCP dependency."
+    },
+    "permissions_and_environment_names": {
+      "status": "redacted",
+      "files": [
+        "ai-workflow/snapshots/user-settings.json",
+        "ai-workflow/snapshots/tool-settings.json",
+        ".env.example",
+        "ai-workflow/.env.example",
+        ".gitignore",
+        "app.py",
+        "scripts/verify_live.py"
+      ],
+      "notes": "Observed permission layers and all recognized application environment names recorded. No keys/authentication/private URLs. Examples are documentation; original personal settings were not changed."
+    }
+  },
+  "configuration_records": [
+    {
+      "name": "Development tool and model history",
+      "category": "development_tools_and_models",
+      "purpose": "Plan, build, debug and review the exercise",
+      "original_path_or_scope": "Selected Codex project chat runtime metadata",
+      "saved_path": "ai-workflow/snapshots/development-model-history.json",
+      "version_or_commit": "Embedded runtime 0.160.1 during setup, 0.162.0-alpha.2 later; gpt-6-sol/medium, gpt-6.1-sol/medium, gpt-6.1-sol/high",
+      "used_during": "7 October setup; 8–9 October planning/implementation/review",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "LLM_USAGE_NOTE.md"
+      ]
+    },
+    {
+      "name": "Applicable current Codex user settings",
+      "category": "development_tools_and_models",
+      "purpose": "Record actual model/effort/context and default service tier",
+      "original_path_or_scope": "${CODEX_HOME}/config.toml",
+      "saved_path": "ai-workflow/snapshots/user-settings.json",
+      "version_or_commit": "Sanitized current projection, 2026-10-09",
+      "used_during": "Current exercise host configuration",
+      "status": "redacted",
+      "redactions": [
+        "Other projects/personal settings/account auth omitted",
+        "Machine paths replaced with scopes"
+      ],
+      "files": []
+    },
+    {
+      "name": "Unrecorded coding-model defaults and desktop history",
+      "category": "development_tools_and_models",
+      "purpose": "Disclose the limits of the export",
+      "original_path_or_scope": "App-managed runtime and earlier personal config",
+      "saved_path": "ai-workflow/snapshots/user-settings.json",
+      "version_or_commit": "not-exportable",
+      "used_during": "Earlier complete user config/build IDs and hidden decoding defaults",
+      "status": "not-exportable",
+      "redactions": [
+        "No invented values or copied account/session authentication"
+      ],
+      "files": []
+    },
+    {
+      "name": "Codex app and browser runtime plugins",
+      "category": "plugins_and_extensions",
+      "purpose": "Chat/project coordination and local browser verification",
+      "original_path_or_scope": "App-provisioned plugins and applicable user settings",
+      "saved_path": "ai-workflow/snapshots/tool-settings.json",
+      "version_or_commit": "codex-app-tools 0.1.5; unified-computer-use/browser/computer-use 26.1002.52244",
+      "used_during": "Setup, delegated implementation/review, UI verification",
+      "status": "redacted",
+      "redactions": [
+        "Unrelated installed plugins and account connections excluded"
+      ],
+      "files": []
+    },
+    {
+      "name": "Current application model and contracts",
+      "category": "application_models_and_parameters",
+      "purpose": "Draft answers and independently check evidence",
+      "original_path_or_scope": "workspace/gemini.py and workspace/evidence.py",
+      "saved_path": "workspace/gemini.py",
+      "version_or_commit": "gemini-3.1-flash-lite; google-genai 2.29.0; Pydantic 2.13.5; normalized current file hashes below",
+      "used_during": "Current real Q1–Q8 verification/replay",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "workspace/evidence.py",
+        "requirements.txt",
+        "examples/capture-provenance.json",
+        "workspace/schemas.py",
+        "workspace/prompts.py"
+      ]
+    },
+    {
+      "name": "Captured historical application configurations",
+      "category": "application_models_and_parameters",
+      "purpose": "Preserve exact earlier prompts/settings/native schemas, including unsuccessful attempts",
+      "original_path_or_scope": "Original live capture requests in artifacts/real-runs",
+      "saved_path": "ai-workflow/snapshots/application-history/index.json",
+      "version_or_commit": "Eleven distinct captured configurations, indexed by canonical configuration SHA-256",
+      "used_during": "8–9 October integration and checker fixes",
+      "status": "used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "evidence-review",
+      "category": "skills",
+      "purpose": "Evidence lifecycle or feature acceptance checklist",
+      "original_path_or_scope": ".agents/skills/evidence-review/SKILL.md",
+      "saved_path": ".agents/skills/evidence-review/SKILL.md",
+      "version_or_commit": "Current normal-path definition; normalized SHA-256 below",
+      "used_during": "Planning, implementation and review",
+      "status": "used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "feature-review",
+      "category": "skills",
+      "purpose": "Evidence lifecycle or feature acceptance checklist",
+      "original_path_or_scope": ".agents/skills/feature-review/SKILL.md",
+      "saved_path": ".agents/skills/feature-review/SKILL.md",
+      "version_or_commit": "Current normal-path definition; normalized SHA-256 below",
+      "used_during": "Planning, implementation and review",
+      "status": "used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "Earlier project skill definitions",
+      "category": "skills",
+      "purpose": "Preserve earlier review instructions and setup experiments",
+      "original_path_or_scope": "Original .agents/skills definitions and project session snapshots",
+      "saved_path": "ai-workflow/snapshots/project-history/index.json",
+      "version_or_commit": "Initial Git 77957afab3e75630946872795d89a4f7ec864504 and exact named snapshots/patches",
+      "used_during": "7–9 October",
+      "status": "redacted",
+      "redactions": [
+        "Workspace/user paths replaced with placeholders"
+      ],
+      "files": []
+    },
+    {
+      "name": "Removed feature-design and feature-implementation",
+      "category": "skills",
+      "purpose": "Record an inactive setup experiment without reinstalling it",
+      "original_path_or_scope": "Former .agents/skills definitions",
+      "saved_path": "ai-workflow/snapshots/project-history/index.json",
+      "version_or_commit": "Recovered exact creation definitions, 7 October",
+      "used_during": "Created and removed before implementation",
+      "status": "not-used",
+      "redactions": [
+        "Inactive archive only; not claimed as implementation tools"
+      ],
+      "files": []
+    },
+    {
+      "name": "Built-in skill guidance and supplied data guidance",
+      "category": "skills",
+      "purpose": "Preserve guidance actually read and the helper validator attempted during setup",
+      "original_path_or_scope": "${CODEX_HOME}/skills/.system, installed computer-use bundle and starter pack",
+      "saved_path": "ai-workflow/snapshots/builtin-guidance/index.json",
+      "version_or_commit": "Installed definitions snapshot 2026-10-09; computer-use 26.1002.52244; starter 2026-10-02",
+      "used_during": "Setup/skills preparation, read-only fixture guidance and browser verification",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "ai-workflow/snapshots/builtin-guidance/skill-creator/scripts/quick_validate.py"
+      ]
+    },
+    {
+      "name": "Earlier built-in definitions not retained",
+      "category": "skills",
+      "purpose": "Explain why current guidance is not certified as the exact earlier revision",
+      "original_path_or_scope": "Earlier installed built-in skill bundles",
+      "saved_path": "ai-workflow/snapshots/builtin-guidance/index.json",
+      "version_or_commit": "not-exportable",
+      "used_during": "Earlier configuration/setup sessions",
+      "status": "not-exportable",
+      "redactions": [
+        "Only available current files preserved; unused referenced resources not copied"
+      ],
+      "files": []
+    },
+    {
+      "name": "Project standing and implementation instructions",
+      "category": "agent_instructions_and_subagents",
+      "purpose": "Scope, evidence boundaries, staged plan and verification requirements",
+      "original_path_or_scope": "Normal repository instruction files",
+      "saved_path": "AGENTS.md",
+      "version_or_commit": "Current working files; normalized hashes below",
+      "used_during": "All project work",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "IMPLEMENTATION_PLAN.md",
+        "README.md"
+      ]
+    },
+    {
+      "name": "Historical project instructions",
+      "category": "agent_instructions_and_subagents",
+      "purpose": "Keep earlier AGENTS versions and intermediate instruction changes available",
+      "original_path_or_scope": "Initial Git state and exact project session records",
+      "saved_path": "ai-workflow/snapshots/project-history/index.json",
+      "version_or_commit": "77957afab3e75630946872795d89a4f7ec864504 plus named snapshots with source event timestamps",
+      "used_during": "7–9 October",
+      "status": "redacted",
+      "redactions": [
+        "Machine paths replaced with portable scopes"
+      ],
+      "files": []
+    },
+    {
+      "name": "Runtime collaboration subagents",
+      "category": "agent_instructions_and_subagents",
+      "purpose": "Bounded review/diagnosis and configuration-history exploration",
+      "original_path_or_scope": "Actual collaboration spawn/followup calls; inherited child runtime metadata",
+      "saved_path": "ai-workflow/snapshots/subagents.json",
+      "version_or_commit": "Runtime task events at indexed timestamps; inherited gpt-6.1-sol/high",
+      "used_during": "Implementation review, feature fixes/audit and this export",
+      "status": "redacted",
+      "redactions": [
+        "Paths sanitized; exact available current assignments preserved; encrypted unavailable messages excluded"
+      ],
+      "files": []
+    },
+    {
+      "name": "Unavailable historical runtime task prompts",
+      "category": "agent_instructions_and_subagents",
+      "purpose": "Document missing exact instructions without fabricating replacements",
+      "original_path_or_scope": "Encrypted local project session fields",
+      "saved_path": "ai-workflow/snapshots/subagents.json",
+      "version_or_commit": "not-exportable",
+      "used_during": "Four earlier initial assignments and unavailable followups",
+      "status": "not-exportable",
+      "redactions": [
+        "No export key available; ciphertext and full chat logs excluded"
+      ],
+      "files": []
+    },
+    {
+      "name": "Reusable custom agent packages",
+      "category": "agent_instructions_and_subagents",
+      "purpose": "Distinguish runtime tasks/separate chats from a configured standalone agent package",
+      "original_path_or_scope": "Repository agent-definition configuration",
+      "saved_path": "ai-workflow/snapshots/subagents.json",
+      "version_or_commit": "not-used",
+      "used_during": "No standalone reusable definitions configured",
+      "status": "not-used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "Custom project hooks",
+      "category": "hooks_and_scripts",
+      "purpose": "Record that no automatic project hooks were used",
+      "original_path_or_scope": "Project hook configuration",
+      "saved_path": "ai-workflow/snapshots/tool-settings.json",
+      "version_or_commit": "not-used",
+      "used_during": "Entire exercise",
+      "status": "not-used",
+      "redactions": [
+        "Other project's hook trust state omitted"
+      ],
+      "files": []
+    },
+    {
+      "name": "Host turn-ended notification integration",
+      "category": "hooks_and_scripts",
+      "purpose": "Record configured bundled notify event without treating it as a custom project hook",
+      "original_path_or_scope": "${CODEX_HOME}/config.toml notify",
+      "saved_path": "ai-workflow/snapshots/tool-settings.json",
+      "version_or_commit": "Bundled computer-use runtime 26.1002.52244",
+      "used_during": "Configured host integration during exercise",
+      "status": "redacted",
+      "redactions": [
+        "Machine-specific helper path omitted; invocation history not-exportable"
+      ],
+      "files": []
+    },
+    {
+      "name": "Manual verification and preparation scripts",
+      "category": "hooks_and_scripts",
+      "purpose": "Capture/replay, independent outcomes and synthetic fixtures; manual execution only",
+      "original_path_or_scope": "scripts/ normal repository files",
+      "saved_path": "scripts/verify_q1_demo.py",
+      "version_or_commit": "Current working files; normalized hashes below",
+      "used_during": "Implementation/integration/final verification",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "scripts/prepare_live_request.py",
+        "scripts/prepare_verification.py",
+        "scripts/replay_captured_draft.py",
+        "scripts/retry_checker.py",
+        "scripts/verification_results.py",
+        "scripts/verify_extension.py",
+        "scripts/verify_live.py",
+        "scripts/verify_q1_demo.py",
+        "scripts/verify_q2.py",
+        "scripts/verify_reference_cases.py",
+        "scripts/verify_remaining.py"
+      ]
+    },
+    {
+      "name": "Application and development prompts/rules",
+      "category": "prompts_and_rules",
+      "purpose": "Source-only factual support, authority, structured checks and explicit human approval",
+      "original_path_or_scope": "Normal app source, domain rules and user-submitted development prompts",
+      "saved_path": "workspace/prompts.py",
+      "version_or_commit": "Current source plus indexed earlier captured configurations and selected exact user excerpts",
+      "used_during": "Planning, generation, review and corrections",
+      "status": "used",
+      "redactions": [],
+      "files": [
+        "workspace/evidence.py",
+        "tasks/evidence/domain.md",
+        "IMPLEMENTATION_PLAN.md",
+        "LLM_USAGE_NOTE.md",
+        "ai-workflow/snapshots/application-history/index.json",
+        "workspace/schemas.py",
+        "workspace/gemini.py"
+      ]
+    },
+    {
+      "name": "Configured host MCP and browser runtime",
+      "category": "tool_and_mcp_settings",
+      "purpose": "Keep applicable tool settings and describe provisioning/restore boundaries",
+      "original_path_or_scope": "${CODEX_HOME}/config.toml mcp_servers.node_repl and shell_environment_policy",
+      "saved_path": "ai-workflow/snapshots/tool-settings.json",
+      "version_or_commit": "Current sanitized snapshot, 2026-10-09",
+      "used_during": "Local UI inspection and project chat/tool work",
+      "status": "redacted",
+      "redactions": [
+        "Runtime executable/node/module paths and pipe instance omitted",
+        "Host browser trust hash omitted as build-specific"
+      ],
+      "files": []
+    },
+    {
+      "name": "Custom project MCP server",
+      "category": "tool_and_mcp_settings",
+      "purpose": "Record absent optional infrastructure",
+      "original_path_or_scope": "Repository MCP definitions",
+      "saved_path": "ai-workflow/snapshots/tool-settings.json",
+      "version_or_commit": "not-used",
+      "used_during": "No custom project server configured",
+      "status": "not-used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "Local Streamlit settings",
+      "category": "tool_and_mcp_settings",
+      "purpose": "Localhost UI, headless server and disabled usage-stat collection",
+      "original_path_or_scope": ".streamlit/config.toml",
+      "saved_path": ".streamlit/config.toml",
+      "version_or_commit": "Current normal-path config; normalized hash below",
+      "used_during": "UI/runtime verification",
+      "status": "used",
+      "redactions": [],
+      "files": []
+    },
+    {
+      "name": "Observed permission layers",
+      "category": "permissions_and_environment_names",
+      "purpose": "Explain sandbox, network, elevation and application live gate",
+      "original_path_or_scope": "Effective sessions plus applicable host config",
+      "saved_path": "ai-workflow/snapshots/user-settings.json",
+      "version_or_commit": "Observed metadata and current session policy, 2026-10-09",
+      "used_during": "All local checks and specifically authorized live verification",
+      "status": "redacted",
+      "redactions": [
+        "User/artifact/workspace locations replaced with scopes",
+        "No blanket security-setting restore or account authentication"
+      ],
+      "files": []
+    },
+    {
+      "name": "Application environment variable names",
+      "category": "permissions_and_environment_names",
+      "purpose": "Document real variable names and harmless replay defaults",
+      "original_path_or_scope": ".env.example and known app/live-helper reads",
+      "saved_path": "ai-workflow/.env.example",
+      "version_or_commit": "Current documentation snapshot, 2026-10-09",
+      "used_during": "Replay/live selection and isolated source/database verification",
+      "status": "redacted",
+      "redactions": [
+        "API key/alias values blank; no ignored .env copy"
+      ],
+      "files": [
+        ".env.example",
+        "app.py",
+        "scripts/verify_live.py",
+        ".gitignore"
+      ]
+    }
+  ],
+  "replay_command": ".venv/Scripts/python.exe scripts/verify_q1_demo.py --output .tmp/ai-workflow-replay/q1",
+  "workflow_example_path": "LLM_USAGE_NOTE.md",
+  "schema_version": 1,
+  "assignment": "C: Questionnaire Evidence & Review Workspace",
+  "starter_pack_version": "2026-10-02",
+  "recorded_on": "2026-10-09",
+  "file_hashes": {
+    ".agents/skills/evidence-review/SKILL.md": "f1000804d320194658369f0aad32ecab73280d068a1efb2da01e3530ee78e9e7",
+    ".agents/skills/feature-review/SKILL.md": "028347c5d8b9545b5cfb57bdc30173d3b0d301b7c93bb294218b86649d281a07",
+    ".env.example": "e7f04b5c8a5f30019165d6261c1e9110ae96519877bd3e7982a31e1fbc10cdf1",
+    ".gitattributes": "b37b237ca20dea2ad79794864796644ae3190a56035e8ee51255be058f1677c8",
+    ".gitignore": "ee00ad953020b0b2d180f4e81d717f7ee5a4a928f8719f4d29d0804f80dc2441",
+    ".streamlit/config.toml": "cb5113e88e5653e84e856939324b5db4df7fe294f01dedcf0b5198d9a67946b9",
+    "AGENTS.md": "378815f1130138ec332df920ddceb4401e366be203bbfd724b6bda2aa3c88fb5",
+    "IMPLEMENTATION_PLAN.md": "85b815bed0925d5a41afc1a9aa76f066fce55ac9b0b0a918bd2225a108b74a4b",
+    "LLM_USAGE_NOTE.md": "3fdae4954f1b4c99db6435d90a0045f849298f3aeed289accef380beb40fd017",
+    "README.md": "35cee85e3b0084bc1c565c61b57441864bf66af5d33dfabf1f96cf463e81ddd5",
+    "ai-workflow/.env.example": "e7f04b5c8a5f30019165d6261c1e9110ae96519877bd3e7982a31e1fbc10cdf1",
+    "ai-workflow/README.md": "9ec0f08a4bba7ab88b9dce358addb5f7a791babdb257f8913f13a7e96d01ca20",
+    "ai-workflow/snapshots/application-history/2ad0d38709f03176.json": "9126a17465a3d3a7e211ea3bbc46025ee1e9c6683fc401cf836da5a519ae0475",
+    "ai-workflow/snapshots/application-history/339d2524a09e4311.json": "2c86498697e5dcd2e0de03306911cd68acdd2393cc6b04687597bdcdd85617a8",
+    "ai-workflow/snapshots/application-history/4114f62bf6436ea7.json": "54cbf62792b848e004388d953352670ae8a56f33fb59c175549d307b01f57929",
+    "ai-workflow/snapshots/application-history/5b8d77d02cb58de2.json": "f923b824df71674d8f7309ae73bf591973b38368f67e2fbae7f8b118157dd85d",
+    "ai-workflow/snapshots/application-history/7ca93ae8c3a47715.json": "e3e7ef9ac5b2d1c5437d97e52713363bb40f95e3fa47d55852a90a9b51ea17ab",
+    "ai-workflow/snapshots/application-history/9b0dd54caf9a955f.json": "d8fc48509be3f76e3ea5b78bbd9499862ad5790f7370eca485a00e2e65341297",
+    "ai-workflow/snapshots/application-history/a27a772eda5ddcca.json": "678464241deb43a5149904045e6408d460e6a66541a1dbfedfd77392ae22a2ed",
+    "ai-workflow/snapshots/application-history/a62b780617af5de9.json": "e20a1be4c2f0b67aa438f093c47b5be8b70d691090b8493341cdb760084f8aad",
+    "ai-workflow/snapshots/application-history/cf3776ff22c9d13e.json": "2efaddaa5efbddc78139eb35e5216fa60a382a3f1e2c2519f033763a48a86e48",
+    "ai-workflow/snapshots/application-history/d6d0db0378da45a3.json": "627b55019f2a4a3dda23decb6b61fa9094faa7e2902cd9164d6acc093da92261",
+    "ai-workflow/snapshots/application-history/fc5dbe43d0431b95.json": "a4a5cb5aa5683cb279b9d4364a10a1e15c8f329c60333c9c8eaf94dd26760158",
+    "ai-workflow/snapshots/application-history/index.json": "5be7ddfb7055d5d90f1cf86efb6c38859d05f143b201c116e8bd5c283ecd5c30",
+    "ai-workflow/snapshots/builtin-guidance/computer-use/SKILL.md": "6fe86dbdd25a85dfe9fa20537554f06830c09385116f8ecf2d23dc9e952482de",
+    "ai-workflow/snapshots/builtin-guidance/generate-assignment-data/SKILL.md": "bebf0e0b9e1011faefc45f8e43b446e5baca3c759761d4cf9fcebc924d7f0a70",
+    "ai-workflow/snapshots/builtin-guidance/index.json": "b14ad24a8ec29d84f4aa33331e0b4cb593a0af86da225bfa20208052efe5c39b",
+    "ai-workflow/snapshots/builtin-guidance/openai-docs/SKILL.md": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45",
+    "ai-workflow/snapshots/builtin-guidance/skill-creator/SKILL.md": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66",
+    "ai-workflow/snapshots/builtin-guidance/skill-creator/scripts/quick_validate.py": "ee6dba90f44d37171c5a6edb8095979c54919ff6822c1a907afca2e78c48738c",
+    "ai-workflow/snapshots/development-model-history.json": "19490672e928e8ecb63e3b616c074330a09fadf3d08b5c68dfa8cacf1d31f763",
+    "ai-workflow/snapshots/project-history/AGENTS-01.md": "0cdf81873bf9a809db39af16a3c130e4367a23882da490a15ed8e1fcbde7dd22",
+    "ai-workflow/snapshots/project-history/AGENTS-02.md": "d6556092dfb737312cbd1ea628d845b32192445bfdbd3bca10f9a7844222d745",
+    "ai-workflow/snapshots/project-history/AGENTS-03.md": "2a3546d4cc6c5292f9b0263c32e505a1cba6557cee7f34b5eeb00a55924cd28d",
+    "ai-workflow/snapshots/project-history/AGENTS-04.md": "5f44d103906415c313ec7a4d57bdd713abb195c62348395881dea620877d930d",
+    "ai-workflow/snapshots/project-history/AGENTS-05.md": "8c5fb79196e590c424b82e2d609b17f7a873c7f360a3460a7ce6e18a1418dca6",
+    "ai-workflow/snapshots/project-history/AGENTS-06.md": "f12e62b116c4033b14894aab8b2f031926c82440e95d60608eb7947866a04adf",
+    "ai-workflow/snapshots/project-history/AGENTS-patch-01.patch": "78b45d491ec6a4d9a4bb513d2d543d3f3ffa4b2d7bd9ed5243f6e5002c1fbe9e",
+    "ai-workflow/snapshots/project-history/AGENTS-patch-02.patch": "70e4e7a75e284d6e5d7b1ab02560ecb082951b23f983a6e5af2e69fb8265c6c5",
+    "ai-workflow/snapshots/project-history/AGENTS-patch-05.patch": "6e27902662c090ab6fda48e8c9da6e8058cbb00e0b85b7eb07149ccc8f192249",
+    "ai-workflow/snapshots/project-history/AGENTS-patch-06.patch": "df658e945b507b49f319d0b4b047e4601548438d3b3eae722364c194b09e1db7",
+    "ai-workflow/snapshots/project-history/AGENTS-patch-07.patch": "ca3e12fb40392526f0b687e91bdc9e17d26ef108c48467feb6cbf65601a3a7da",
+    "ai-workflow/snapshots/project-history/README-before-submission.md": "6a769df84449af7766477c6561cea523efd3094c94fb76e7c7baea2df7ed3972",
+    "ai-workflow/snapshots/project-history/evidence-review-01.md": "f1000804d320194658369f0aad32ecab73280d068a1efb2da01e3530ee78e9e7",
+    "ai-workflow/snapshots/project-history/feature-design-01.md": "65bb6f3c19eb0390fc9fafdcf2fb3425dd11b25a5a04f525f66b128efddc8415",
+    "ai-workflow/snapshots/project-history/feature-implementation-01.md": "d4fc648ab0858899b47736a3f5a3e74d7231a187a72ec10fce342a0fdd7b6b21",
+    "ai-workflow/snapshots/project-history/feature-review-01.md": "028347c5d8b9545b5cfb57bdc30173d3b0d301b7c93bb294218b86649d281a07",
+    "ai-workflow/snapshots/project-history/feature-review-02.md": "10eb6c5b61eda135a1f28f322a621956c7ca53feae662d2bb013a3063f0f0bff",
+    "ai-workflow/snapshots/project-history/index.json": "7264592ef2e3b1eb3047bbeb7d084768f54d98ba8a79e3ddcc60cba9a49a3aaa",
+    "ai-workflow/snapshots/subagents.json": "72fdc830fb98a5a54bffd0641032948363a3bbc07154eae3d1f09b6bf9ea1989",
+    "ai-workflow/snapshots/tool-settings.json": "1857c6faf97aad19b1a65b8c25b08d0ee91b7c09ecaa2df75d6f6d8c135532dd",
+    "ai-workflow/snapshots/user-settings.json": "ad524ed9c1d67556d617d7bcee5a0db97a7beb3a0cd3754adfe4ce1f427c5179",
+    "app.py": "4d2c5bfb0bf47faa5f779af17b9543831c523b0511c96dec4aabeb8a8ae14986",
+    "examples/capture-provenance.json": "87c929581e5ad9e14002b174e3c36194e30853a4b2c69ea52e173eeed1bbdbba",
+    "requirements-dev.txt": "a2e21339047e4ad34f4d86eb24ef1c58edc19de6e881750ac8410efae95fbac3",
+    "requirements.txt": "4024173ef4be6133c3431083a4d17565395078e272195d57a078b3015b2334bd",
+    "scripts/prepare_live_request.py": "097b4555e1311a1b56addd2d5077220937fc2bcb3170d3644d310be4c7c30c9d",
+    "scripts/prepare_verification.py": "d42ba8b24d1262b35e3466e8859d573d224833abccdbb8f197b351610e8cb6cd",
+    "scripts/replay_captured_draft.py": "72075cfce63a7da38e3d43ba1055823f16b9e08b32265bb4618244b9784e0421",
+    "scripts/retry_checker.py": "9c8f26aac1a34bfe4bce3a55cedba585a04ccf0b65d2330b2f0323bcd23e1242",
+    "scripts/verification_results.py": "118cc8951a99dae20cd1537b9552cddc4e4a365b1038c8b4fb118c578351ab09",
+    "scripts/verify_extension.py": "04d14145fe65961178f5cb1515a70be640b4fabc6bd47c7e09339ddf55f4f52b",
+    "scripts/verify_live.py": "b6e64c3f0eae8c775eac87c8f2f2f84fbe5e5c02edb0af5ffd6a2f2a22771911",
+    "scripts/verify_q1_demo.py": "8261956b100e42d63c44d7bca2044e374fb9c4f9499cfe500ea14c0780b95c6a",
+    "scripts/verify_q2.py": "48a40f817186593b3457fd9c4989ce677cbe6e0420eeeae6bb757a42e9e7bddc",
+    "scripts/verify_reference_cases.py": "a4555f360f51f14b69876915377a065be506d52fc0aa6ff5a661f44a5273b36e",
+    "scripts/verify_remaining.py": "16c8bd528b2afba2ff8dd49f2f7eee12b7dd7c413f5bd6a6b1d133a265cee699",
+    "tasks/evidence/domain.md": "e59fd1dcca901894b4628734a8f3061f26f28c6cf734183181def866ce8a3997",
+    "workspace/evidence.py": "2a11a7886ec36e0f539952aa33d84bbcc31f8a88130c80aa014eddcf982cc71c",
+    "workspace/gemini.py": "c6837c55f603f709d5cec400a49ff692bf1291aabd6a089b3bb23bd211b27442",
+    "workspace/prompts.py": "bc23620ea1e7aceeaa7b814781025d47f73869efde691a1a99a8fbf7323ed5b2",
+    "workspace/schemas.py": "d7dcc5ce2860614208a693237a1fab5652cd969954b561beb0b6e3289f427ed3"
+  },
+  "file_hash_normalization": "SHA-256 of repository text bytes after CRLF-to-LF normalization; source indices separately describe original/canonical hashes",
+  "additional_replay_commands": [
+    ".venv/Scripts/python.exe scripts/verify_reference_cases.py --output .tmp/ai-workflow-replay/reference"
+  ],
+  "restoration_notes": "Active project files remain at normal repository paths. Snapshots are archives/reference settings, not auto-enabled hooks or host config. See ai-workflow/README.md for installed-runtime restoration, named history and exceptions."
+}

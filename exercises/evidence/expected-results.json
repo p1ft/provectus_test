@@ -1,0 +1,30 @@
+{
+  "provenance": "Independent starter extension expectations, separate from model fixtures.",
+  "supported": {
+    "question_id": "EXT-SUPPORTED",
+    "status": "answered",
+    "source": "EXPORT-EXT:p1"
+  },
+  "unsupported": {
+    "question_id": "EXT-UNKNOWN",
+    "status": "unresolved",
+    "owner": "Product reviewer",
+    "reason": "YAML export is undocumented."
+  },
+  "conflicting_source": {
+    "question_id": "EXT-CONFLICT",
+    "status": "unresolved",
+    "sources": [
+      "INVOICE-DISPATCH-A:p1",
+      "INVOICE-DISPATCH-B:p1"
+    ]
+  },
+  "approved_reuse": {
+    "question_id": "EXT-REUSE",
+    "steps": "Approve EXT-SUPPORTED explicitly; exact repeat returns its approved wording while EXT-REUSE remains pending. An unapproved edit is excluded."
+  },
+  "changed_source": {
+    "question_id": "EXT-CHANGE",
+    "steps": "Approve EXT-CHANGE explicitly, update EXPORT-EXT to version 2, confirm review_required and blocked reuse with version 1 text retained; edit, validate and approve again before reuse."
+  }
+}

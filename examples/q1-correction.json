@@ -1,0 +1,21 @@
+{
+  "question_id": "Q1",
+  "disposition": "answered",
+  "answer": "Free-plan users cannot export CSV; CSV export is available on paid plans only.",
+  "citations": [
+    {
+      "passage_id": "EXPORT-v2:p1",
+      "excerpt": "CSV exports are available on paid plans only. Free-plan users cannot export CSV."
+    }
+  ],
+  "unresolved_reason": "",
+  "conflicts": [
+    {
+      "passage_ids": [
+        "EXPORT-v1:p1",
+        "EXPORT-v2:p1"
+      ],
+      "explanation": "EXPORT-v1:p1 stated CSV exports were available on every plan, but this was superseded by EXPORT-v2:p1, which restricts CSV exports to paid plans only."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "definitions": [
+    {
+      "name": "skill-creator",
+      "original_scope": "${CODEX_HOME}\\skills\\.system\\skill-creator\\SKILL.md",
+      "file": "ai-workflow/snapshots/builtin-guidance/skill-creator/SKILL.md",
+      "sha256": "cccd291077ec57c6f50ca6529f0f3fb93212da09473effb2fcec808e81b21288",
+      "version": "Installed definition, snapshot 2026-10-09; no package version exported",
+      "status": "used",
+      "purpose": "Guidance read during setup or browser verification; not an application dependency",
+      "historical_revision": "not-exportable: earlier built-in file contents/hashes were not retained",
+      "restore": "Use the installed tool's complete skill bundle. This exact current-file snapshot is an archive, not an independently installable package; unused referenced resources are omitted."
+    },
+    {
+      "name": "openai-docs",
+      "original_scope": "${CODEX_HOME}\\skills\\.system\\openai-docs\\SKILL.md",
+      "file": "ai-workflow/snapshots/builtin-guidance/openai-docs/SKILL.md",
+      "sha256": "8ce8021101bcea594ff92ee6cfd8ca7641a49ee66d7bc6070555f1a33fc239d9",
+      "version": "Installed definition, snapshot 2026-10-09; no package version exported",
+      "status": "used",
+      "purpose": "Guidance read during setup or browser verification; not an application dependency",
+      "historical_revision": "not-exportable: earlier built-in file contents/hashes were not retained",
+      "restore": "Use the installed tool's complete skill bundle. This exact current-file snapshot is an archive, not an independently installable package; unused referenced resources are omitted."
+    },
+    {
+      "name": "computer-use",
+      "original_scope": "${CODEX_HOME}\\plugins\\cache\\openai-bundled\\computer-use\\26.1002.52244\\skills\\computer-use\\SKILL.md",
+      "file": "ai-workflow/snapshots/builtin-guidance/computer-use/SKILL.md",
+      "sha256": "8211e4b11a19a0dc4f0ace91096c74c5b36037ca4cb2c8988f0f535bb209e951",
+      "version": "26.1002.52244",
+      "status": "used",
+      "purpose": "Guidance read during setup or browser verification; not an application dependency",
+      "historical_revision": "not-exportable: earlier built-in file contents/hashes were not retained",
+      "restore": "Use the installed tool's complete skill bundle. This exact current-file snapshot is an archive, not an independently installable package; unused referenced resources are omitted."
+    }
+  ],
+  "supporting_script": {
+    "file": "ai-workflow/snapshots/builtin-guidance/skill-creator/scripts/quick_validate.py",
+    "sha256": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806",
+    "purpose": "Actual skill frontmatter validator attempted during setup; initially blocked by missing PyYAML",
+    "automatic_execution": false
+  },
+  "reference_only": [
+    "autopilot/report archive ideas were reviewed but not installed as active project skills",
+    "Starter generate-assignment-data guidance was read; no persistent custom generator skill was installed"
+  ],
+  "reference_guidance": {
+    "file": "ai-workflow/snapshots/builtin-guidance/generate-assignment-data/SKILL.md",
+    "version": "starter-pack 2026-10-02",
+    "sha256": "bebf0e0b9e1011faefc45f8e43b446e5baca3c759761d4cf9fcebc924d7f0a70",
+    "status": "used",
+    "usage": "Read-only fixture preparation guidance; not installed as active project skill; no generator application implemented by this skill"
+  }
+}

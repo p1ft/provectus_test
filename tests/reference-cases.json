@@ -1,0 +1,15 @@
+{
+  "provenance": "Independent expectations declared from domain.md and seed passages before observing application output",
+  "cases": [
+    {"id": "Q4", "expected": "Live chat is not offered", "passage": "SUPPORT-v1:p1", "origin": "SUPPORT-v1:p1 directly states Live chat is not offered"},
+    {"id": "Q5", "expected": "Sign in with email and password", "passage": "ACCESS-v1:p1", "origin": "ACCESS-v1:p1 documents email and password sign-in"},
+    {"id": "Q6", "expected": "Account owners can invite team members", "passage": "ACCESS-v1:p1", "origin": "ACCESS-v1:p1 explicitly names account owners"},
+    {"id": "Q7", "expected": "Subscriptions are billed monthly", "passage": "BILLING-v1:p1", "origin": "BILLING-v1:p1 explicitly says monthly in USD"},
+    {"id": "Q8", "expected": "Account owners can download billing invoices", "passage": "BILLING-v1:p1", "origin": "BILLING-v1:p1 explicitly names account owners"},
+    {"id": "unapproved-edit", "expected": "An unapproved edit cannot replace approved wording in reuse", "origin": "domain.md rule 3"},
+    {"id": "source-removal", "expected": "Unavailable evidence blocks approved reuse and preserves historical text", "origin": "Evidence-review source-unavailable case and plan C"},
+    {"id": "same-version-change", "expected": "Changed content at the same version invalidates approvals", "origin": "plan C content fingerprint requirement"},
+    {"id": "reload", "expected": "Approved wording and evidence survive a new process", "origin": "plan C SQLite durable-state requirement"},
+    {"id": "replay-miss", "expected": "A request without an exact capture remains unresolved with no live fallback", "origin": "plan D exact-request replay requirement"}
+  ]
+}

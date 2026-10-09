@@ -1,0 +1,45 @@
+{
+  "provenance": "synthetic test response; never produced by Gemini",
+  "draft": {
+    "question_id": "Q1",
+    "disposition": "answered",
+    "answer": "No. Free-plan users cannot export CSV; CSV export requires a paid plan.",
+    "citations": [
+      {
+        "passage_id": "EXPORT-v2:p1",
+        "excerpt": "CSV exports are available on paid plans only. Free-plan users cannot export CSV."
+      }
+    ],
+    "unresolved_reason": "",
+    "conflicts": [
+      {
+        "passage_ids": ["EXPORT-v2:p1", "EXPORT-v1:p1"],
+        "explanation": "The old passage allowed CSV on every plan; explicit replacement resolves it."
+      }
+    ]
+  },
+  "check": {
+    "question_id": "Q1",
+    "full_answer": "No. Free-plan users cannot export CSV; CSV export requires a paid plan.",
+    "all_claims_covered": true,
+    "answers_question": true,
+    "citations_relevant": true,
+    "omitted_claims": [],
+    "claims": [
+      {
+        "start": 0,
+        "end": 71,
+        "text": "No. Free-plan users cannot export CSV; CSV export requires a paid plan.",
+        "supporting_passage_ids": ["EXPORT-v2:p1"],
+        "verdict": "supported",
+        "explanation": "Both claims are expressly documented in the replacing passage."
+      }
+    ],
+    "conflicts": [
+      {
+        "passage_ids": ["EXPORT-v2:p1", "EXPORT-v1:p1"],
+        "explanation": "Explicit supersession resolves the old contradictory policy."
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status": "redacted",
+  "recorded_on": "2026-10-09",
+  "original_scope": "${CODEX_HOME}/config.toml",
+  "applicable_current_values": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "high",
+    "model_context_window": 1000000,
+    "model_auto_compact_token_limit": 900000,
+    "service_tier": "default",
+    "features": {
+      "js_repl": false
+    },
+    "windows": {
+      "sandbox": "elevated"
+    }
+  },
+  "project_settings": {
+    "scope": "${REPO_ROOT}",
+    "trust_level": "trusted"
+  },
+  "effective_session_permissions": {
+    "sandbox": "workspace-write",
+    "network": "restricted",
+    "approval_policy_in_logs": "on-request",
+    "approval_reviewer_in_current_session": "auto_review",
+    "writable_scopes": [
+      "${REPO_ROOT}",
+      "${CHAT_ARTIFACT_ROOT}",
+      "temporary directories"
+    ],
+    "elevated_execution": "Explicitly requested for localhost Streamlit tests/server and authorized live Gemini verification"
+  },
+  "restore": "Reference only. Project files remain at normal paths; choose the recorded model/effort in Codex. Do not import all host permissions automatically.",
+  "redactions": [
+    "Other projects and unrelated settings omitted",
+    "User/workspace/artifact directory values replaced with scopes",
+    "Account authentication, full prompts and session logs excluded",
+    "Empty user-level AGENTS.md omitted",
+    "Other-project hook trust state omitted; no project hook exists"
+  ],
+  "not_exportable": [
+    "Earlier complete user-level config revisions",
+    "Full app/system instruction stack and account authentication",
+    "Earlier desktop shell build IDs; embedded runtime versions are recorded separately"
+  ]
+}

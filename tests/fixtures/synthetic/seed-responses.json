@@ -1,0 +1,16 @@
+{
+  "provenance": "Synthetic test data manually derived from supplied fictional passages; never Gemini output",
+  "drafts": [
+    {"question_id":"Q1","disposition":"answered","answer":"No. Free-plan users cannot export CSV. CSV exports require a paid plan.","citations":[{"passage_id":"EXPORT-v2:p1","excerpt":"CSV exports are available on paid plans only. Free-plan users cannot export CSV."}],"unresolved_reason":"","conflicts":[{"passage_ids":["EXPORT-v2:p1","EXPORT-v1:p1"],"explanation":"The older every-plan policy is replaced explicitly by EXPORT-v2."}]},
+    {"question_id":"Q2","disposition":"unresolved","answer":"","citations":[],"unresolved_reason":"JSON export is undocumented; Product reviewer clarification is required.","conflicts":[]},
+    {"question_id":"Q3","disposition":"answered","answer":"Email support is available Monday to Friday, 09:00 to 17:00 UTC.","citations":[{"passage_id":"SUPPORT-v1:p1","excerpt":"Email support is available Monday to Friday, 09:00 to 17:00 UTC."}],"unresolved_reason":"","conflicts":[]},
+    {"question_id":"Q4","disposition":"answered","answer":"Live chat is not offered.","citations":[{"passage_id":"SUPPORT-v1:p1","excerpt":"Live chat is not offered."}],"unresolved_reason":"","conflicts":[]},
+    {"question_id":"Q5","disposition":"answered","answer":"Users can sign in with email and password.","citations":[{"passage_id":"ACCESS-v1:p1","excerpt":"Users can sign in with email and password."}],"unresolved_reason":"","conflicts":[]},
+    {"question_id":"Q6","disposition":"answered","answer":"Account owners can invite team members.","citations":[{"passage_id":"ACCESS-v1:p1","excerpt":"Account owners can invite team members."}],"unresolved_reason":"","conflicts":[]},
+    {"question_id":"Q7","disposition":"answered","answer":"Paid subscriptions are billed monthly in USD.","citations":[{"passage_id":"BILLING-v1:p1","excerpt":"Paid subscriptions are billed monthly in USD."}],"unresolved_reason":"","conflicts":[]},
+    {"question_id":"Q8","disposition":"answered","answer":"Account owners can download billing invoices.","citations":[{"passage_id":"BILLING-v1:p1","excerpt":"Account owners can download billing invoices."}],"unresolved_reason":"","conflicts":[]}
+  ],
+  "edited_answers": [
+    {"question_id":"Q1","disposition":"answered","answer":"Free-plan users cannot export CSV; CSV export is available on paid plans only.","citations":[{"passage_id":"EXPORT-v2:p1","excerpt":"CSV exports are available on paid plans only. Free-plan users cannot export CSV."}],"unresolved_reason":"","conflicts":[{"passage_ids":["EXPORT-v2:p1","EXPORT-v1:p1"],"explanation":"The older every-plan policy is replaced explicitly by EXPORT-v2."}]}
+  ]
+}

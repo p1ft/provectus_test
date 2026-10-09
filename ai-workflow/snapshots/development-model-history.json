@@ -1,0 +1,132 @@
+{
+  "status": "used",
+  "source": "Selected project session metadata only",
+  "chats": [
+    {
+      "chat": "Provectus-test — настройка Codex",
+      "embedded_runtime_versions": [
+        "0.160.1"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6-sol",
+          "reasoning_effort": "medium",
+          "first_observed_at": "2026-10-07T14:14:30.301Z"
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "medium",
+          "first_observed_at": "2026-10-07T17:16:02.279Z"
+        }
+      ]
+    },
+    {
+      "chat": "Plan evidence review app",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-08T11:42:14.040Z"
+        }
+      ]
+    },
+    {
+      "chat": "yes, try to test it 2 more times. maybe try switching to other model because i have free api",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-08T12:08:40.146Z"
+        }
+      ]
+    },
+    {
+      "chat": "Review feature implementation",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-08T19:28:47.313Z"
+        }
+      ]
+    },
+    {
+      "chat": "Review Questionnaire Evidence & Review",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-09T11:13:43.634Z"
+        }
+      ]
+    },
+    {
+      "chat": "Fix Questionnaire Evidence & Review…",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-09T11:43:48.449Z"
+        }
+      ]
+    },
+    {
+      "chat": "Оценить сложность UI задания",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-09T11:45:10.314Z"
+        }
+      ]
+    },
+    {
+      "chat": "Оценить готовность задания C",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-09T13:11:15.953Z"
+        }
+      ]
+    },
+    {
+      "chat": "Составь LLM usage note",
+      "embedded_runtime_versions": [
+        "0.162.0-alpha.2"
+      ],
+      "model_settings": [
+        {
+          "model": "gpt-6.1-sol",
+          "reasoning_effort": "high",
+          "first_observed_at": "2026-10-09T13:54:56.871Z"
+        }
+      ]
+    }
+  ],
+  "omissions": [
+    "Chat IDs and message bodies omitted",
+    "No user-level credentials or unrelated chats exported"
+  ]
+}

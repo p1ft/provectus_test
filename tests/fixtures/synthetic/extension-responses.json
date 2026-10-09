@@ -1,0 +1,112 @@
+{
+  "provenance": "Synthetic starter extension exercise; no external model results or working approvals.",
+  "drafts": [
+    {
+      "question_id": "EXT-SUPPORTED",
+      "disposition": "answered",
+      "answer": "Yes, XLSX exports are available on paid plans.",
+      "citations": [
+        {
+          "passage_id": "EXPORT-EXT:p1",
+          "excerpt": "XLSX exports are available on paid plans only."
+        }
+      ],
+      "unresolved_reason": "",
+      "conflicts": []
+    },
+    {
+      "question_id": "EXT-UNKNOWN",
+      "disposition": "unresolved",
+      "answer": "",
+      "citations": [],
+      "unresolved_reason": "YAML export is undocumented.",
+      "conflicts": []
+    },
+    {
+      "question_id": "EXT-CONFLICT",
+      "disposition": "answered",
+      "answer": "Invoice emails are dispatched on weekdays at 10:00 UTC.",
+      "citations": [
+        {
+          "passage_id": "INVOICE-DISPATCH-A:p1",
+          "excerpt": "Invoice emails are dispatched on weekdays at 10:00 UTC."
+        }
+      ],
+      "unresolved_reason": "",
+      "conflicts": []
+    },
+    {
+      "question_id": "EXT-REUSE",
+      "disposition": "answered",
+      "answer": "Yes, XLSX exports are available on paid plans.",
+      "citations": [
+        {
+          "passage_id": "EXPORT-EXT:p1",
+          "excerpt": "XLSX exports are available on paid plans only."
+        }
+      ],
+      "unresolved_reason": "",
+      "conflicts": []
+    },
+    {
+      "question_id": "EXT-CHANGE",
+      "disposition": "answered",
+      "answer": "XLSX exports are available on paid plans only.",
+      "citations": [
+        {
+          "passage_id": "EXPORT-EXT:p1",
+          "excerpt": "XLSX exports are available on paid plans only."
+        }
+      ],
+      "unresolved_reason": "",
+      "conflicts": []
+    }
+  ],
+  "edited_answers": [],
+  "checks": {
+    "EXT-CONFLICT": {
+      "question_id": "EXT-CONFLICT",
+      "full_answer": "Invoice emails are dispatched on weekdays at 10:00 UTC.",
+      "all_claims_covered": true,
+      "answers_question": true,
+      "citations_relevant": true,
+      "omitted_claims": [],
+      "claims": [
+        {
+          "start": 0,
+          "end": 55,
+          "text": "Invoice emails are dispatched on weekdays at 10:00 UTC.",
+          "supporting_passage_ids": [
+            "INVOICE-DISPATCH-A:p1"
+          ],
+          "verdict": "supported",
+          "explanation": "Synthetic assessment of first passage."
+        }
+      ],
+      "conflicts": [
+        {
+          "passage_ids": [
+            "INVOICE-DISPATCH-A:p1",
+            "INVOICE-DISPATCH-B:p1"
+          ],
+          "explanation": "Independent sources give incompatible dispatch times; neither supersedes the other."
+        }
+      ]
+    }
+  },
+  "source_updates": [
+    {
+      "id": "EXPORT-EXT",
+      "version": 2,
+      "date": "2026-10-09",
+      "status": "current",
+      "supersedes": null,
+      "passages": [
+        {
+          "id": "EXPORT-EXT:p1",
+          "text": "XLSX exports are available on paid plans only. Free-plan users cannot export XLSX. Export files include a header row."
+        }
+      ]
+    }
+  ]
+}

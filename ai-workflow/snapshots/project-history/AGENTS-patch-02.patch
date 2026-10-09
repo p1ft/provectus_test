@@ -1,0 +1,9 @@
+*** Begin Patch
+*** Update File: ${REPO_ROOT}/AGENTS.md
+@@
+-| `.agents/skills/feature-design/SKILL.md` | Feature behavior or solution needs design | Minimal user flow, decisions, acceptance cases and checks |
+-| `.agents/skills/feature-implementation/SKILL.md` | Implementing an authorized feature or fix | Runnable change with verification and reproducible commands |
+@@
+-Keep the workflow compact while preserving distinct design, implementation, and review procedures. Update these instructions when the repository gains verified commands or a concrete correction warrants it.
++Keep the workflow compact. Update these instructions when the repository gains verified commands or a concrete correction warrants it.
+*** End Patch

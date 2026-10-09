@@ -1,0 +1,183 @@
+{
+  "assignment": "C: Questionnaire Evidence & Review Workspace",
+  "review_date": "2026-10-09",
+  "review_scope": "Git clean checkout with a new pinned Python 3.12.14 environment",
+  "minimum_cases": [
+    {
+      "case": "supported_answer",
+      "input": {
+        "question_id": "Q3",
+        "question": "When is email support available?"
+      },
+      "expected": {
+        "answer": "Monday to Friday, 09:00–17:00 UTC",
+        "passage": "SUPPORT-v1:p1"
+      },
+      "observed": {
+        "answer": "Email support is provided during the work week, specifically Monday through Friday, from 09:00 to 17:00 UTC.",
+        "status": "answered",
+        "checker": {
+          "request_result": "pass",
+          "semantic_result": "pass",
+          "findings": [],
+          "run_id": 6
+        }
+      },
+      "result": "pass",
+      "provenance": "saved real response replay"
+    },
+    {
+      "case": "undocumented_json_export",
+      "input": {
+        "question_id": "Q2",
+        "question": "Is JSON export available?"
+      },
+      "expected": {
+        "status": "unresolved",
+        "owner": "Product reviewer",
+        "answer": "",
+        "reason": "JSON export is undocumented"
+      },
+      "observed": {
+        "status": "unresolved",
+        "answer": "",
+        "checker": {
+          "request_result": "pass",
+          "semantic_result": "pass",
+          "findings": [],
+          "run_id": 4
+        }
+      },
+      "result": "pass",
+      "provenance": "saved real response replay; empty-answer checker checked independently"
+    },
+    {
+      "case": "superseded_csv_policy",
+      "input": {
+        "question_id": "Q1",
+        "question": "Can free-plan users export CSV?"
+      },
+      "expected": {
+        "answer": "No, paid plans only",
+        "source": "EXPORT-v2:p1",
+        "show_conflict_with": "EXPORT-v1:p1"
+      },
+      "observed": {
+        "answer": "No, free-plan users are not able to export CSV files, as this feature is restricted to paid plans.",
+        "supporting_passages": [
+          "EXPORT-v2:p1"
+        ],
+        "conflicts": [
+          [
+            "EXPORT-v1:p1",
+            "EXPORT-v2:p1"
+          ]
+        ],
+        "checker": {
+          "request_result": "pass",
+          "semantic_result": "pass",
+          "findings": [],
+          "run_id": 2
+        }
+      },
+      "result": "pass",
+      "provenance": "saved real response replay and UI"
+    },
+    {
+      "case": "approved_and_unapproved_reuse",
+      "input": {
+        "question_id": "Q1",
+        "question": "Can free-plan users export CSV?"
+      },
+      "expected": {
+        "approved_answer": "Free-plan users cannot export CSV; CSV export is available on paid plans only.",
+        "pending_edit_reused": false
+      },
+      "observed": {
+        "corrected_check": "pass",
+        "approval_reuse": "pass",
+        "unapproved_edit_excluded": "pass"
+      },
+      "result": "pass",
+      "provenance": "real checker replay; isolated demonstration approval and reuse"
+    },
+    {
+      "case": "reload_and_source_version_change",
+      "input": {
+        "question_id": "Q1",
+        "question": "Can free-plan users export CSV?"
+      },
+      "expected": {
+        "reload_persists": true,
+        "source_change_status": "review_required",
+        "reuse_after_change": false
+      },
+      "observed": {
+        "reload": "pass",
+        "source_change": "pass",
+        "source_removal": "pass",
+        "synthetic_source_change_status": "review_required"
+      },
+      "result": "pass",
+      "provenance": "isolated real-capture lifecycle and synthetic reference comparison"
+    }
+  ],
+  "verification": {
+    "pytest": {
+      "status": "pass",
+      "passed": 163,
+      "duration_seconds": 166.68
+    },
+    "ruff": "pass",
+    "compileall": "pass",
+    "pip_check": "pass",
+    "fresh_pip_install": "pass",
+    "reference_synthetic": {
+      "pass": 15,
+      "fail": 0
+    },
+    "current_real_replay": {
+      "pass": 8,
+      "fail": 0
+    },
+    "q1_replay_lifecycle": {
+      "pass": 9,
+      "fail": 0
+    },
+    "extension_synthetic": {
+      "pass": 5,
+      "fail": 0
+    },
+    "extension_real": "unverified; no captured real extension calls",
+    "new_live_calls": "unverified; none requested by this final offline review"
+  },
+  "original_starter_file_bytes_match_zip": {
+    "document.template.json": true,
+    "domain.md": true,
+    "expected-seed-results.json": true,
+    "seed.json": true
+  },
+  "saved_real_capture_count": 17,
+  "all_capture_hashes_match": true,
+  "api_key_required_for_replay": false,
+  "browser": "Actual clean-checkout Streamlit flow: cited Q1, fixed correction, labelled demonstration approval and approval/evidence after reload; isolated database",
+  "historical_results": "Prior checker/provider failures are retained separately; no historical pass label counts as a current check",
+  "code_organization_follow_up": {
+    "schema_module": "workspace/schemas.py",
+    "prompt_module": "workspace/prompts.py",
+    "exact_schema_and_prompt_hashes_unchanged": true,
+    "hashes": {
+      "draft_schema": "dcefab8642f06d486186b956fde0592e6a560a4a47bcc3f95eacf15a20ecc346",
+      "checker_schema": "d3b302854ccdf3962be47950aad7d9e8c6adeb190a47f6495f21f0f5dc9f5085",
+      "draft_prompt": "c87789c192cf824debd39b2f36fa90550a604e9f22c73f644a744b513c09b95b",
+      "answered_check_prompt": "095c35594d8e10f24c32faca7b4158c8d5382d182d67ea6f1a754640833d1cf5"
+    },
+    "focused_tests_passed": 52,
+    "full_suite_passed": 163,
+    "full_suite_seconds": 158.81,
+    "q1_lifecycle_replay": "pass",
+    "q1_q8_exact_real_replay": "pass",
+    "new_live_model_calls": 0,
+    "git_commit": "not created after user requested no commit"
+  }
+}

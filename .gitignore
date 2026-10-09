@@ -13,3 +13,16 @@ __pycache__/
 .pytest_cache/
 .idea/
 .vscode/
+
+# Local workspace state and verification output
+data/
+*.sqlite
+*.sqlite3
+*.db
+*-wal
+*-shm
+*-journal
+artifacts/real-runs/
+artifacts/verification/
+.ruff_cache/
+.tmp/

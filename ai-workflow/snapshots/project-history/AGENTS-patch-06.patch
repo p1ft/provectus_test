@@ -1,0 +1,12 @@
+*** Begin Patch
+*** Update File: ${REPO_ROOT}/AGENTS.md
+@@
+-Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Steps 1–6 and local step-7 verification are implemented. Live Gemini and new real-response replay remain unverified pending explicit external-payload approval.
++Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Steps 1–6 and local checks are implemented. Live payloads authorized; Q1 drafts/partial replay passed, but semantic-check requests return HTTP 400 / INVALID_ARGUMENT. Further retries require an explicit override of the two-correction limit after automatic approval review rejected another call.
+@@
+-- Runtime / deployment target: local Streamlit process on `127.0.0.1`; UI/backend tested offline with isolated synthetic data. Live Gemini remains unverified.
++- Runtime / deployment target: local Streamlit process on `127.0.0.1`; UI/backend tested offline with isolated synthetic data. Real Q1 drafting exercised; complete live validation/replay blocked by checker API rejection.
+@@
+ - Bind approval validation to stored source revision IDs as well as content fingerprints; restoring identical source text must require fresh validation.
++- Inspect each captured draft and checker run separately before calling a generation attempt wholly failed; the draft may have succeeded before checking failed.
+*** End Patch

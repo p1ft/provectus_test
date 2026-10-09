@@ -1,0 +1,89 @@
+{
+  "configurations": [
+    {
+      "file": "ai-workflow/snapshots/application-history/9b0dd54caf9a955f.json",
+      "configuration_sha256": "9b0dd54caf9a955f2eee773820e937bbdfd628beaf4fe1e6154d4f47c42f60a0",
+      "purpose": "draft",
+      "model": "gemini-3.1-flash-lite",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/a62b780617af5de9.json",
+      "configuration_sha256": "a62b780617af5de90a1329a53c38f69c8402361fc05caf6f636bb048dd9cbaf4",
+      "purpose": "check",
+      "model": "gemini-3.1-flash-lite",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/4114f62bf6436ea7.json",
+      "configuration_sha256": "4114f62bf6436ea7812a821a542f515d5884101a7349ddf1818e5dc1c685f842",
+      "purpose": "draft",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/fc5dbe43d0431b95.json",
+      "configuration_sha256": "fc5dbe43d0431b955c943484bf7babff02d08117527377b47e5132d2cb50655c",
+      "purpose": "check",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/2ad0d38709f03176.json",
+      "configuration_sha256": "2ad0d38709f03176ca393609e4e61a8977ec84d106619e5c30d9f1e6dbb0d504",
+      "purpose": "draft",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/a27a772eda5ddcca.json",
+      "configuration_sha256": "a27a772eda5ddcca5a16620dd731c98fa81374560a441505a59593bcd6aea4f9",
+      "purpose": "check",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/339d2524a09e4311.json",
+      "configuration_sha256": "339d2524a09e4311a0fb6b005c2d2ee0814c8a9653392232ced27e7e699c0003",
+      "purpose": "draft",
+      "model": "gemini-3.1-flash-lite",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/5b8d77d02cb58de2.json",
+      "configuration_sha256": "5b8d77d02cb58de28cc8fc429aaf2884548165f3d260724f2455b5080ff40ce0",
+      "purpose": "check",
+      "model": "gemini-3.1-flash-lite",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/d6d0db0378da45a3.json",
+      "configuration_sha256": "d6d0db0378da45a30857bdee1c4c8aa73ecc351ec0e2e2bf20b02296a0b98938",
+      "purpose": "check",
+      "model": "gemini-3.1-flash-lite",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/7ca93ae8c3a47715.json",
+      "configuration_sha256": "7ca93ae8c3a4771534d2ef65f6ec59ad7b4fe40eba8fa404ec80d4be1accc6db",
+      "purpose": "draft",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    },
+    {
+      "file": "ai-workflow/snapshots/application-history/cf3776ff22c9d13e.json",
+      "configuration_sha256": "cf3776ff22c9d13e848dfd0d6abcd21e5834a1c46700c3e9f8f8ba0f9c7d310d",
+      "purpose": "check",
+      "model": "gemini-3.8-flash",
+      "sdk_version": "2.29.0"
+    }
+  ],
+  "current_active_definitions": [
+    "workspace/schemas.py",
+    "workspace/prompts.py",
+    "workspace/evidence.py",
+    "workspace/gemini.py"
+  ],
+  "current_replay": "examples/real-replay",
+  "earlier_unrecorded_versions": "not-exportable: only captured exact configurations and current source definitions are available"
+}

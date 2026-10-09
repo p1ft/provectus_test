@@ -1,0 +1,17 @@
+*** Begin Patch
+*** Update File: ${REPO_ROOT}/AGENTS.md
+@@
+-For design, implementation, or review of the questionnaire evidence flow, use `.agents/skills/evidence-review/SKILL.md` for the domain checklist. Update these instructions only when the repository gains verified commands or a concrete correction warrants it.
++## Project skills
++
++Use the relevant skill for the requested work; do not require every stage for a small edit.
++
++| Skill | When to use | Expected result |
++| --- | --- | --- |
++| `.agents/skills/feature-design/SKILL.md` | Feature behavior or solution needs design | Minimal user flow, decisions, acceptance cases and checks |
++| `.agents/skills/feature-implementation/SKILL.md` | Implementing an authorized feature or fix | Runnable change with verification and reproducible commands |
++| `.agents/skills/feature-review/SKILL.md` | Testing or reviewing a change | Checked acceptance cases and actionable findings or limitations |
++| `.agents/skills/evidence-review/SKILL.md` | Evidence, approval, reuse or source versions are involved | Domain-specific lifecycle checks used by the relevant stage |
++
++Keep the workflow compact while preserving distinct design, implementation, and review procedures. Update these instructions when the repository gains verified commands or a concrete correction warrants it.
+*** End Patch

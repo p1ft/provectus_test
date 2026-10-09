@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "configuration_kind": "Runtime collaboration task assignments, not reusable standalone agent definitions",
+  "source_scope": "Relevant project sessions only",
+  "records": [
+    {
+      "task_name": "review_backend",
+      "operation": "spawn_agent",
+      "status": "not-exportable",
+      "purpose": "Backend review",
+      "purpose_basis": "Task name only; exact initial instruction payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11cfd-39cb-7152-8d53-10c123701609",
+        "line": 31,
+        "timestamp_utc": "2026-10-08T19:29:15.267Z"
+      },
+      "spawn_parameters": {
+        "task_name": "review_backend"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a11cfd-c425-7120-9d6d-95d61a0a0b83",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 17,
+        "timestamp_utc": "2026-10-08T19:29:17.194Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "review_integration",
+      "operation": "spawn_agent",
+      "status": "not-exportable",
+      "purpose": "Integration review",
+      "purpose_basis": "Task name only; exact initial instruction payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a11cfd-39cb-7152-8d53-10c123701609",
+        "line": 37,
+        "timestamp_utc": "2026-10-08T19:29:21.249Z"
+      },
+      "spawn_parameters": {
+        "task_name": "review_integration"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a11cfd-db7f-7633-89fb-7dee704f218f",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 18,
+        "timestamp_utc": "2026-10-08T19:29:23.383Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "backend_review",
+      "operation": "spawn_agent",
+      "status": "not-exportable",
+      "purpose": "Backend review",
+      "purpose_basis": "Task name only; exact initial instruction payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a1205e-6a80-7d30-8046-d5add129f05a",
+        "line": 24,
+        "timestamp_utc": "2026-10-09T11:14:07.596Z"
+      },
+      "spawn_parameters": {
+        "task_name": "backend_review"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a1205e-d286-75a1-9fc6-3ce9618071d7",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 15,
+        "timestamp_utc": "2026-10-09T11:14:09.564Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "capture_reporting",
+      "operation": "spawn_agent",
+      "status": "not-exportable",
+      "purpose": "Capture and reporting review",
+      "purpose_basis": "Task name only; exact initial instruction payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a12079-f3a1-75d3-a9af-218cd7843b31",
+        "line": 31,
+        "timestamp_utc": "2026-10-09T11:44:32.125Z"
+      },
+      "spawn_parameters": {
+        "task_name": "capture_reporting"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a1207a-a996-7c11-99fe-83eadddbd3d9",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 15,
+        "timestamp_utc": "2026-10-09T11:44:34.083Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "feature_audit",
+      "operation": "spawn_agent",
+      "status": "exported",
+      "purpose": "Variant C readiness audit; subsequent verification and startup fix",
+      "purpose_basis": "Plaintext current parent conversation",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 26,
+        "timestamp_utc": "2026-10-09T13:11:43.130Z"
+      },
+      "spawn_parameters": {
+        "task_name": "feature_audit",
+        "fork_turns": "all"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a120ca-7b38-7470-ad28-3b3284e56e68",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 17,
+        "timestamp_utc": "2026-10-09T13:11:45.137Z"
+      },
+      "prompt": "Review-only exploration of current ${REPO_ROOT} variant C code and readiness. Read AGENTS.md and feature-review/evidence-review skills, tasks/evidence specification, README implementation docs, app.py/workspace with callers, tests and verification artifacts. Assess requirements coverage, bugs/risks, demonstrability and material unverified gaps. You may run targeted existing tests but root will run full suite/lint; no file modifications, no live model calls, no credentials reading. Focus code feature, evidence lifecycle and UI flow, not AI workflow submission documents. Provide concrete file locations and evidence, distinguish historical real runs from current tests. User asks detailed readiness audit, not fixes.",
+      "prompt_export_note": "Exact plaintext initial assignment retained in the current parent conversation; machine paths replaced with portable placeholders. Local JSONL copy is encrypted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "feature_audit",
+      "operation": "followup_task",
+      "status": "not-exportable",
+      "purpose": "Variant C readiness audit; subsequent verification and startup fix",
+      "purpose_basis": "Subsequent purpose reported in current parent conversation; exact followup payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 176,
+        "timestamp_utc": "2026-10-09T13:18:02.181Z"
+      },
+      "spawn_parameters": {
+        "target": "feature_audit"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a120ca-7b38-7470-ad28-3b3284e56e68",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 17,
+        "timestamp_utc": "2026-10-09T13:11:45.137Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "feature_audit",
+      "operation": "followup_task",
+      "status": "not-exportable",
+      "purpose": "Variant C readiness audit; subsequent verification and startup fix",
+      "purpose_basis": "Subsequent purpose reported in current parent conversation; exact followup payload unavailable",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 308,
+        "timestamp_utc": "2026-10-09T13:31:42.905Z"
+      },
+      "spawn_parameters": {
+        "target": "feature_audit"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a120ca-7b38-7470-ad28-3b3284e56e68",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 17,
+        "timestamp_utc": "2026-10-09T13:11:45.137Z"
+      },
+      "prompt": null,
+      "prompt_export_note": "Exact historical payload is encrypted in the local session log. No decryption key is available; ciphertext is omitted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    },
+    {
+      "task_name": "workflow_history",
+      "operation": "spawn_agent",
+      "status": "exported",
+      "purpose": "Recover historical project instructions and subagent settings for AI workflow documentation",
+      "purpose_basis": "Plaintext current parent conversation",
+      "source": {
+        "kind": "local-project-session",
+        "thread_id": "01a120c9-f84e-7a00-bd05-69a2db897d75",
+        "line": 854,
+        "timestamp_utc": "2026-10-09T14:16:06.494Z"
+      },
+      "spawn_parameters": {
+        "task_name": "workflow_history"
+      },
+      "effective_child_settings": {
+        "thread_id": "01a12105-6ea6-7f83-a508-0319c040f445",
+        "model": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "source_line": 34,
+        "timestamp_utc": "2026-10-09T14:16:08.648Z"
+      },
+      "prompt": "User authorizes completing actual AI workflow setup for provectus-test. Explore only relevant project session logs and recover historical instruction/config versions and actual runtime subagent prompts; no invented entries, no global settings mutation, no secrets/external calls. Own writes ONLY ai-workflow/snapshots/project-history/ and ai-workflow/snapshots/subagents.json (root owns manifest/README/user-settings/tools/application snapshots). Read AGENTS first. Project thread IDs: 01a116b7-36b2-7442-952c-49764e06ca5f setup (Oct7), 01a11b52-22c9-7952-a453-0e1cd5e185ae plan, 01a11b6a-5929-7670-b6c0-85a62f2457d6 impl, 01a11cfd-39cb-7152-8d53-10c123701609 earlier review, 01a1205e-6a80-7d30-8046-d5add129f05a review, 01a12079-f3a1-75d3-a9af-218cd7843b31 fix, 01a120c9-f84e-7a00-bd05-69a2db897d75 current. Their exact JSONL files under ${CODEX_HOME}/sessions/2026/10 named rollout-*<ID>.jsonl. Do not dump entire logs. Full AddFile patches for deleted feature-design and feature-implementation SKILL.md exist in setup JSONL custom_tool_call payload input text with tools.apply_patch(JSON string); recover exact original contents as historical inactive snapshots. Also recover earlier AGENTS/evidence/feature-review full definitions where exact versions available, use initial Git commit 77957afab3e75630946872795d89a4f7ec864504 if useful. Preserve relevant earlier updates only if can reconstruct reliably; mark unrecoverable gaps honestly. Deletedskills existed then removed before implementation; do not restore active. Current skills stay normal paths. Capture actual collaboration spawn_agent/followup_task messages (review_backend, review_integration, backend_review, capture_reporting, feature_audit) in sanitized JSON with purpose/version/time, inherited model settings exact if available and no reusable standalone config claimed. Replace absolute workspace path with ${REPO_ROOT}, user-level paths ${CODEX_HOME}/${USER_HOME}; remove unrelated private settings if any. Return file inventory, exact provenance and limitations; preserve original metadata internally in snapshots only project IDs no private paths. Do not send messages to external chats. No full tests needed for docs; validate snapshot text/schema references and no credentials. Root will do final manifest validation.",
+      "prompt_export_note": "Exact plaintext initial assignment retained in the current parent conversation; machine paths replaced with portable placeholders. Local JSONL copy is encrypted.",
+      "reusable_standalone_configuration": false,
+      "version": "Runtime task assignment at recorded timestamp"
+    }
+  ],
+  "limitations": [
+    "Historical prompt bodies are encrypted; inaccessible plaintext is explicitly not-exportable. Ciphertext and private account metadata are omitted.",
+    "Two initial prompts are retained from the current parent conversation; followup bodies remain not-exportable.",
+    "No explicit model/reasoning override was supplied in these spawn calls; child turn_context independently confirms inherited gpt-6.1-sol/high.",
+    "Fork context is shared at runtime; complete conversation logs and platform-provided instructions are not exported."
+  ],
+  "redactions": [
+    "Machine-specific workspace paths replaced by ${REPO_ROOT}",
+    "Codex/user paths replaced by ${CODEX_HOME}/${USER_HOME}",
+    "Encrypted prompt payloads and unrelated identity metadata omitted"
+  ]
+}

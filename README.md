@@ -1,44 +1,111 @@
 # Questionnaire Evidence & Review Workspace
 
-Junior AI Engineer test assignment, variant C. This repository contains the original evidence starter data and a small Codex workflow foundation; the application has not been implemented.
+Alternative C of the Junior AI Engineer assignment. A local workspace that drafts questionnaire answers from fictional product documents, shows supporting and conflicting evidence, and lets a reviewer correct, approve and reuse eligible answers.
 
-## Starter data and preparation scope
+**No API key is needed to review the submitted solution.** The default mode replays 17 saved real Gemini responses for Q1–Q8 and the fixed Q1 reviewer correction through the same validation path used for live calls.
 
-`tasks/evidence/` was copied unchanged from `client-ai-starter-pack (1).zip`, under `client-ai-starter-pack/tasks/evidence/`:
+| Review material | Purpose |
+| --- | --- |
+| [Written walkthrough](WALKTHROUGH.md) | Guided product demonstration with expected outcomes |
+| [Final review and results](verification/FINAL_REVIEW.md) | Requirements coverage, executed checks, observed results and limitations |
+| [LLM usage note](LLM_USAGE_NOTE.md) | Actual tools/models, selected original prompts and a correction example |
+| [AI workflow setup](ai-workflow/README.md) / [manifest](ai-workflow/manifest.json) | Applied configuration, versions, history, restoration and explained omissions |
 
-- `domain.md`: authoritative fictional exercise rules.
-- `seed.json`: five documents, eight questions, passage IDs, versions, explicit supersession, and topic-to-reviewer mapping.
-- `expected-seed-results.json`: independent supplied expectations for Q1, Q2, Q3, approval/reuse, and source changes.
-- `document.template.json`: the supplied document format.
+## Quick start
 
-The assignment brief was read from `client-ai-project-research.html`, Alternative C. Only the four evidence files were imported. No generated data, random seed, other assignments, or changes to supplied expectations were added. The imported files were checked byte-for-byte against the archive.
+Python **3.12** is required; `3.12.14` was used for verification. Commands below use Windows PowerShell from the repository root. Use an available Python 3.12 interpreter for `python`; the Windows `py` launcher was not configured on the development host. On POSIX, the environment's interpreter is `.venv/bin/python`.
 
-Only supplied product passages count as evidence. Undocumented features remain unknown; authority follows explicit `supersedes`, not date order. Q1 must use `EXPORT-v2:p1` and show the conflict with `EXPORT-v1:p1`; Q2 remains unresolved with the Product reviewer; Q3 uses `SUPPORT-v1:p1` for Monday to Friday, 09:00–17:00 UTC. Unapproved edits remain drafts; approved reuse requires exact question matching and current referenced versions. Source changes require review, and replaced text stays visible. No additional domain rules were introduced.
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-dev.txt
+$env:WORKSPACE_DB='.tmp/reviewer-demo.sqlite3'
+$env:WORKSPACE_VERIFICATION='0'
+$env:WORKSPACE_ALLOW_LIVE='0'
+Remove-Item Env:GEMINI_MODEL, Env:WORKSPACE_REPLAY_DIR, Env:WORKSPACE_SEED -ErrorAction SilentlyContinue
+.venv/Scripts/python.exe -m streamlit run app.py
+```
 
-## Selected stack for implementation
+Open the local URL printed by Streamlit. The app binds to `127.0.0.1`, with usage-stat collection disabled. Q1 opens first in **Replay of real run · gemini-3.1-flash-lite**. Choose a new database filename if the example already exists: startup preserves existing questions, documents and review state. Stop the server with Ctrl+C.
 
-Python is required by the user; LangChain and Gemini API are the preferred model integration. The following is a selected implementation plan, not installed or exercised application code:
+## What to try
 
-- **Python with `venv` and `pip`**: one language for data loading, evidence checks, persistence, model calls, and UI. Exact Python and dependency versions will be pinned and verified when implementation begins.
-- **Streamlit**: a single local browser workspace with status filters, counts, side-by-side answer/evidence, and explicit reviewer edit/approve forms. This avoids maintaining a separate frontend and API within the one-day limit. Model calls should follow an explicit action, not ordinary widget reruns.
-- **SQLite through Python's `sqlite3`**: durable drafts, evidence and source versions, reviewer edits, approval records, and exact-match reuse. The reviewer queue is a filtered set of persisted questions; it needs no background worker or message broker. Streamlit Session State can hold temporary UI selections, but cannot satisfy reload persistence on its own ([Streamlit documentation](https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state)). SQLite needs no separate database server ([Python documentation](https://docs.python.org/3/library/sqlite3.html)).
-- **Gemini API through `langchain-google-genai`**: use the LangChain chat-model integration for a direct request with the five documents and structured draft output. This keeps the user's preference without adding agents, LangGraph, embeddings, or a vector database. The integration is documented in the [official LangChain Google repository](https://github.com/langchain-ai/langchain-google). The actual Gemini model and settings remain unselected until access is confirmed; save them with real responses for replay without an API key.
+1. **Q1 / CSV export:** click **Create answer**. The answer uses `EXPORT-v2:p1`, paid plans only, and keeps the replaced `EXPORT-v1:p1` every-plan policy visible. Authority follows explicit `supersedes`, not dates.
+2. **Correction and approval:** choose **Edit answer** and replace only the wording with `Free-plan users cannot export CSV; CSV export is available on paid plans only.` Keep other fields unchanged and click **Save and check**. Then explicitly approve with a demonstration reviewer name and evidence confirmation.
+3. **Reuse and reload:** on **Reuse approved answer**, enter `Can free-plan users export CSV?` exactly. The approved correction, reviewer and sources appear and survive reload. An unapproved edit cannot replace that reusable wording.
+4. **Q2 / JSON export:** create its draft. It remains **Unresolved** with the **Product reviewer** route because JSON export is undocumented. It cannot be approved. Q3 provides documented support hours; Q4 can give a supported negative answer about live chat.
+5. **Source change, last:** update the working `EXPORT-v2` version from 2 to 3 on **Sources**. Q1 needs fresh review, reuse is blocked and old evidence remains. Original fixture files are untouched.
 
-A direct Google Gen AI SDK call would reduce dependencies further; the selected LangChain integration adds a small adapter while preserving the requested preference. A separate FastAPI/JavaScript frontend offers more layout control but adds implementation and verification work unnecessary for this local review queue.
+The complete button-by-button route is in [WALKTHROUGH.md](WALKTHROUGH.md). The exact replay proposal is [examples/q1-correction.json](examples/q1-correction.json). New wording or changed sources without a matching recorded check produce a visible replay miss; replay never calls the API. A new database restarts the original demonstration.
 
-## Current execution status and next stage
+## Architecture and model configuration
 
-There is no application entry point, dependency manifest, test suite, or verified install/build/test/lint/typecheck/run command yet. No dependency or configuration scaffold was added solely to represent the planned stack. The Windows `py` launcher reported no registered Python installations during preparation; this does not establish that no other Python environment exists. Runtime selection and dependency installation remain for implementation.
+One synchronous Streamlit process, SQLite persistence, shared Pydantic v2 contracts and the official Google Gen AI SDK. The small corpus fits in a request, so no retrieval service, agent framework or separate frontend/API is needed.
 
-Next stage: implement loading, real model drafting and evidence validation, reviewer actions, durable state, exact approved reuse, and source-version review. Then exercise the five independent reference checks with expected versus observed results, including malformed model output, missing references, and API failures. Save real responses and settings, verify API-key-free replay, and complete setup instructions, a short walkthrough, the LLM usage note, and the actually used `ai-workflow/` configuration. These final-submission requirements are not completed by this preparation commit.
+| File | Responsibility |
+| --- | --- |
+| [app.py](app.py) | Queue, counts/filters, answer/evidence review and explicit reviewer forms |
+| [workspace/schemas.py](workspace/schemas.py) | Shared Pydantic contracts, captured-run/transport data and stable request fingerprints |
+| [workspace/prompts.py](workspace/prompts.py) | Exact draft and checker instructions, separate from document content |
+| [workspace/evidence.py](workspace/evidence.py) | References/excerpts, supersession and semantic-check findings |
+| [workspace/store.py](workspace/store.py) | Atomic initialization/import, immutable revisions, approvals and source history |
+| [workspace/gemini.py](workspace/gemini.py) | Gemini transport, native structured output, raw capture and exact-request replay |
+| [workspace/service.py](workspace/service.py) | Answer lifecycle, exact-wording approval, current-source eligibility and reuse |
 
-## Working with Codex
+The successful application model is **`gemini-3.1-flash-lite`**, through `google-genai==2.29.0`, with temperature `0`, max output tokens `8192`, a `30000 ms` timeout and one SDK attempt per explicit action. Dependency versions are in [requirements.txt](requirements.txt) and [requirements-dev.txt](requirements-dev.txt).
 
-- `AGENTS.md` contains the standing work loop and verified project boundaries.
-- `$feature-review` tests and reviews the change against the requested behavior.
-- `$evidence-review` supplies the domain checklist when source evidence, approval, reuse, or source versions are involved.
-- Add setup, run, and test commands here after the implementation makes them real.
+Document/question content is supplied separately from system instructions. Structured output controls shape; local checks validate references, exact excerpts and authority. Supported drafts also receive a separate whole-answer semantic check. Unresolved or reference-invalid proposals stop the approval pipeline locally; independent verification separately exercises Q2's recorded empty-answer checker. Neither generation nor checking grants approval. Reviewer edits require validation of their exact wording and an explicit approval action bound to stored source revisions.
 
-The skills live in `.agents/skills/` and can be invoked by name, for example: `Use $feature-review to review the answer review screen against the starter-pack rules.` They may also be selected when their descriptions match the task.
+The 17 real captures in `examples/real-replay/` contain exact requests, prompt/schema/model settings and raw responses. [Capture provenance](examples/capture-provenance.json) records original sessions and byte hashes. Synthetic fixtures live separately under `tests/fixtures/synthetic/`. Earlier attempted model configurations and failed-check history are described in the usage/workflow records; they are not current successful outcomes or startup defaults.
 
-The assignment's final submission will document the AI configuration actually used in `ai-workflow/manifest.json` and here. Those entries are intentionally deferred until there is real usage to report.
+## Data, preparation and assumptions
+
+- [tasks/evidence/](tasks/evidence/) contains the four original files from starter-pack version `2026-10-02`, copied byte-for-byte: five documents, eight questions, fixed passage IDs, explicit supersession and topic/reviewer mapping. Their supplied expected results remain unchanged.
+- [tests/reference-cases.json](tests/reference-cases.json) adds independently declared expectations for existing questions and failure/lifecycle checks. Expected values come from the passages/domain rules, never from application output or hardcoded application answers.
+- [exercises/evidence/](exercises/evidence/README.md) is a separate fixed JSON extension prepared with Codex assistance: five additional questions and three short documents. It preserves the original records, has separate expected results and explicitly synthetic verification. No randomized dataset generation was used, so no random seed applies.
+- An undocumented capability is unknown. Dates alone establish no authority; unresolved conflicts need review. Only approved wording can be reused, by identical question text. Replaced text and referenced source versions stay available.
+
+## Verification
+
+From the repository root, run:
+
+```powershell
+.venv/Scripts/python.exe scripts/verify_q1_demo.py --output .tmp/reviewer-checks/q1
+.venv/Scripts/python.exe scripts/verify_reference_cases.py --output .tmp/reviewer-checks/reference
+.venv/Scripts/python.exe scripts/verify_extension.py --output .tmp/reviewer-checks/extension
+.venv/Scripts/python.exe -m pytest -q --basetemp=.tmp/reviewer-tests
+.venv/Scripts/python.exe -m ruff check app.py workspace tests scripts
+.venv/Scripts/python.exe -m compileall -q app.py workspace tests scripts
+.venv/Scripts/python.exe -m pip check
+```
+
+The verifiers create isolated databases and never initialize a live Gemini client. Q1 exercises the saved real draft/correction plus explicitly labelled demonstration approval/reuse, pending-edit exclusion, reload and source invalidation. Reference verification compares five supplied cases plus ten independent additions and separately replays Q1–Q8. Extension verification is synthetic. The full test fixture prohibits real Gemini client initialization.
+
+Reports distinguish question disposition, checker parsing/semantic acceptance, current replay and retained historical results. An offline run does not certify new live calls. [The submitted final-review report](verification/FINAL_REVIEW.md) and machine-readable results under `verification/` record the checks actually executed, including the five minimum demonstration cases. Windows Codex AppTest/server checks needed elevated execution for localhost sockets; ordinary tests do not need API credentials.
+
+## Environment and optional live mode
+
+| Variable | Purpose / default |
+| --- | --- |
+| `GEMINI_API_KEY` | Optional live credential; blank in examples |
+| `GOOGLE_API_KEY` | Optional alias accepted by explicit live-verification helpers |
+| `GEMINI_MODEL` | Defaults to `gemini-3.1-flash-lite` for real replay |
+| `WORKSPACE_DB` | Defaults to ignored `data/workspace.sqlite3`; use a fresh `.tmp/` filename for review |
+| `WORKSPACE_SEED` | Defaults to `tasks/evidence/seed.json` |
+| `WORKSPACE_REPLAY_DIR` | Defaults to `examples/real-replay`; JSON captures must be directly in the directory |
+| `WORKSPACE_VERIFICATION` | `0`; `1` enables labelled synthetic mode in isolated verification databases |
+| `WORKSPACE_ALLOW_LIVE` | `0`; live actions require explicit opt-in |
+
+[.env.example](.env.example) documents names and harmless defaults; the app does **not** load it or `.env` automatically. For optional new live actions, configure the process key and `WORKSPACE_ALLOW_LIVE=1`, then choose **Live Gemini** after agreeing model access/payload. That mode sends the selected question/current source snapshot, instructions/schema/settings and proposed answer for checking. Explicit live helpers can read known key/model values from an ignored local `.env`. No key is stored in captures or required for review.
+
+## Limits and time spent
+
+- Local prototype: reviewer names/roles are recorded, not authenticated.
+- Exact question matching only. Changed wording/sources require matching captures or live validation; pinned SDK/request schemas matter for replay.
+- Any source-corpus change conservatively invalidates all existing approvals, including same-version edits; restored text still needs fresh review.
+- Model-based semantic checking can be wrong. Source inspection, deterministic checks and explicit human confirmation remain necessary; the small demonstration set is not an accuracy benchmark.
+- Real calls were captured for the original questions. Added exercise cases are synthetic; final offline checks do not establish current provider availability.
+- Local databases, credentials, full chat logs, dependency environments and bulk historical artifacts are excluded. The selected real samples, configuration snapshots and final results are included.
+
+**Approximate total effort: 6–7 hours**, including data preparation, implementation, verification and documentation (candidate estimate; no detailed per-stage timesheet).
+
+The [LLM usage note](LLM_USAGE_NOTE.md) explains AI-generated work and corrections. The [AI workflow manifest](ai-workflow/manifest.json) records actual configuration and explicitly marks unused, redacted and non-exportable parts. No deployment, external CRM or automated customer delivery is part of the required local scope.

@@ -150,7 +150,7 @@ Boris Cherny (creator of Claude Code) keeps his team's file around 100 lines. Un
 
 **Fill this in per project. Keep it specific. Delete sections that don't apply.**
 
-Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Application and verification are implemented. Fresh Q1 draft/check and the fixed reviewer correction pass real checking and exact credential-free replay on Gemini 3.1 Flash-Lite. Default `examples/real-replay/` combines these three captures with verified Q2 and unchanged Q3–Q8, covering all eight questions and the fixed Q1 correction. Q2 correctly remains unresolved and unapproved. Q1's isolated demonstration verifies approval/reuse, pending-edit exclusion, reload and source invalidation; earlier Q1/Q2 failures remain historical records.
+Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Application and verification are implemented. Q1 real checking/replay and demonstration lifecycle passed; subsequent user authorization completed Q2–Q8 live draft/check verification and credential-free exact replay on Gemini 3.1 Flash-Lite. Q2 remains unresolved; Q3–Q8 have supported answers. Earlier failures remain in the report history.
 
 ### Stack
 - Language and version: Python 3.12.14 verified in `.venv`. The Windows `py` launcher is not configured.
@@ -173,8 +173,8 @@ Verified backend commands (PowerShell, repository root):
 Prefer single-file or single-test runs during iteration. Full suites are for the final verification pass.
 
 ### Layout
-- Current files: `README.md`, `AGENTS.md`, `.gitignore`, `IMPLEMENTATION_PLAN.md`, `LLM_USAGE_NOTE.md`, completed `ai-workflow/` records, dependency pins and `.env.example`; project skills live in `.agents/skills/`. Original data lives in `tasks/evidence/`.
-- Source lives in: `app.py` and `workspace/` (`schemas.py` contracts, `prompts.py` instructions, evidence checks, SQLite store, Gemini adapter, review service)
+- Current files: `README.md`, `AGENTS.md`, `.gitignore`, `IMPLEMENTATION_PLAN.md`, dependency pins and `.env.example`; project skills live in `.agents/skills/`. Original data lives in `tasks/evidence/`.
+- Source lives in: `app.py` and `workspace/` (evidence contracts, SQLite store, Gemini adapter, review service)
 - Tests live in: `tests/`; synthetic responses in `tests/fixtures/synthetic/`; temporary databases under ignored `.tmp/pytest`
 - Do not modify: original `tasks/evidence/` rules, seed IDs/policies/authority metadata, or supplied expected results. Keep future additions and observed outputs separate from the original fixtures.
 
@@ -197,18 +197,10 @@ When the user corrects your approach, append a one-line rule here before ending 
 
 - Use Pydantic v2 models as shared contracts for source data, Gemini output schemas, and live/replay/edited-answer validation; do not duplicate them as handwritten schemas.
 - Bind approval validation to stored source revision IDs as well as content fingerprints; restoring identical source text must require fresh validation.
-- Report question disposition, checker request/parsing, and checker semantic acceptance separately; a correct unresolved draft cannot mask checker failure. Inspect each captured run separately.
+- Inspect each captured draft and checker run separately before calling a generation attempt wholly failed; the draft may have succeeded before checking failed.
 - Derive an incorrect model span only from a unique exact occurrence of its claim text; retain raw offsets and reject ambiguous, invented, unsupported or uncovered claims.
 - Tell Gemini to use an exact empty unresolved_reason for answered drafts; never normalize "none" or "null" into a valid answer after capture.
 - Compare reference factual meaning and required citations, accepting documentation-qualified actor statements while rejecting undocumented exclusive permissions.
-- Gate verification on current invocation failures, both replay outcomes and exact replay comparison; label retained report rows as historical.
-- Match replay startup defaults to a verified session/model and disclose prompt-incompatible questions; never relax exact request matching to accommodate old captures.
-- Keep reviewer actions and evidence on the main screen; put replay configuration, raw JSON, run IDs, and source administration in separate sections, and open review forms only after an explicit action.
-- For empty proposals, explicitly require the checker to copy the empty answer, never the unresolved reason; retain invalid draft/conflict references as failures even if a later checker response passes.
-- Initialize SQLite schema, migrations and immutable triggers in one transaction; enable foreign keys before BEGIN so cold UI startup does not perform many separate durable commits.
-- In Streamlit AppTest, set the controlled tab through session_state['workspace_tabs']; Tab has no select() method.
-- Define Pydantic and transport data contracts in `workspace/schemas.py` and Gemini instructions in `workspace/prompts.py`; keep Store, Service and transport behavior in their modules.
-- Verify submission integrity from a real Git checkout; keep original fixtures, raw captures and byte-hashed snapshots under -text attributes so Windows line-ending conversion cannot change them.
 
 ---
 

@@ -1,0 +1,31 @@
+*** Begin Patch
+*** Update File: ${REPO_ROOT}/AGENTS.md
+@@
+-Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Backend steps 1–4 are implemented; Streamlit UI, source-update controls, and final verification remain in steps 5–7.
++Project: Junior AI Engineer test assignment, variant C: Questionnaire Evidence & Review Workspace. Steps 1–6 and local step-7 verification are implemented. Live Gemini and new real-response replay remain unverified pending explicit external-payload approval.
+@@
+-- Framework(s): Streamlit 1.65.0 installed for later UI; Gemini through official `google-genai` 2.29.0; Pydantic 2.13.5 shared contracts. SQLite 3.53.1 through standard-library `sqlite3`.
++- Framework(s): Streamlit 1.65.0 UI; Gemini through official `google-genai` 2.29.0 with native structured output; Pydantic 2.13.5 shared contracts. SQLite 3.53.1 through standard-library `sqlite3`.
+@@
+-- Runtime / deployment target: local process; backend tested offline. No `app.py` yet; live Gemini remains unverified.
++- Runtime / deployment target: local Streamlit process on `127.0.0.1`; UI/backend tested offline with isolated synthetic data. Live Gemini remains unverified.
+@@
+-- Compilation: `.venv/Scripts/python.exe -m compileall -q workspace tests`
+-- Test (all): `.venv/Scripts/python.exe -m pytest -q`
++- Compilation: `.venv/Scripts/python.exe -m compileall -q app.py workspace tests scripts`
++- Test (all): `.venv/Scripts/python.exe -m pytest -q --basetemp=.tmp/final-suite`
+@@
+-- Lint: `.venv/Scripts/python.exe -m ruff check workspace tests`
++- Lint: `.venv/Scripts/python.exe -m ruff check app.py workspace tests scripts`
+@@
+-- Run locally: deferred until step 5 implements `app.py`
++- Run locally: `.venv/Scripts/python.exe -m streamlit run app.py`
++- Verification report: `.venv/Scripts/python.exe scripts/verify_reference_cases.py`
++- Streamlit AppTest/server need localhost sockets; run outside the Windows Codex sandbox if asyncio stalls in `socket._fallback_socketpair`.
+@@
+-- Source lives in: `workspace/` (evidence contracts, SQLite store, Gemini adapter, review service)
++- Source lives in: `app.py` and `workspace/` (evidence contracts, SQLite store, Gemini adapter, review service)
+@@
+ - Use Pydantic v2 models as shared contracts for source data, Gemini output schemas, and live/replay/edited-answer validation; do not duplicate them as handwritten schemas.
++- Bind approval validation to stored source revision IDs as well as content fingerprints; restoring identical source text must require fresh validation.
+*** End Patch
